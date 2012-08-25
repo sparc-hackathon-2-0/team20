@@ -16,7 +16,4 @@
     NSMutableDictionary *dragging;
 }
 
-
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @end

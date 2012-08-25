@@ -69,10 +69,10 @@
     goal.goalName = self.nameTextField.text;
     NSError *error;
     [[goal managedObjectContext] save:&error];
-    [[self navigationController] popViewControllerAnimated:YES];
+    [[self navigationController] dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)cancelEdit:(id)sender {
-    [[self navigationController] popViewControllerAnimated:YES];
+    [[self navigationController] dismissModalViewControllerAnimated:YES];
 }
 @end

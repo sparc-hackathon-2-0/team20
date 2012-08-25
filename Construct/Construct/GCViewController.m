@@ -7,6 +7,7 @@
 //
 
 #import "GCViewController.h"
+#import "GoalEditViewController.h"
 #import "ActivityListViewController.h"
 
 @interface GCViewController ()
@@ -19,8 +20,6 @@
 @implementation GCViewController
 @synthesize popover;
 @synthesize activityButton;
-@synthesize managedObjectContext;
-@synthesize fetchedResultsController;
 
 - (void)viewDidLoad
 {
@@ -96,7 +95,16 @@
 
 - (void)addGoal:(id)sender
 {
-    [self addGoal:nil AtPoint:CGPointMake(512.0, 384.0)];
+    // Present a Goal Edit view controller
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    GoalEditViewController *goalEditVC = [storyboard instantiateViewControllerWithIdentifier:@"GoalEditViewController"];
+    
+    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:goalEditVC];
+    [navigationVC setModalPresentationStyle:UIModalPresentationFormSheet];
+    
+    [self presentViewController:navigationVC animated:YES completion:nil];
+    
+//    [self addGoal:nil AtPoint:CGPointMake(512.0, 384.0)];
 }
 
 - (GoalView *)addGoal:(id)goal AtPoint:(CGPoint)point

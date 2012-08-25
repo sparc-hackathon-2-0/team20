@@ -9,12 +9,16 @@
 #import "ActivityEditViewController.h"
 
 @interface ActivityEditViewController ()
-- (IBAction)cancelEdit:(id)sender;
 
+@property (nonatomic, strong) CoreDataManager *coreDataManager;
+
+- (IBAction)cancelEdit:(id)sender;
 - (IBAction)saveActivity:(id)sender;
+
 @end
 
 @implementation ActivityEditViewController
+@synthesize coreDataManager;
 @synthesize activity;
 @synthesize activityNameTextField;
 @synthesize activityDescriptionTxtView;
