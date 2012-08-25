@@ -30,9 +30,9 @@
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="goals" inverseEntity="Activity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Goal" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Category" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="ActivityTag" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Activity" positionX="0" positionY="0" width="128" height="148"/>
+        <element name="ActivityTag" positionX="-20" positionY="-171" width="128" height="88"/>
+        <element name="Category" positionX="-198" positionY="-54" width="128" height="133"/>
+        <element name="Goal" positionX="-216" positionY="-225" width="128" height="118"/>
     </elements>
 </model>

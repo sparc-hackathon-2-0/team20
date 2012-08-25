@@ -12,15 +12,16 @@
 
 + (id)viewWithGoal:(id)goal
 {
-    GoalView *view = [[GoalView alloc] init];
+    GoalView *goalView = [[GoalView alloc] init];
     
     NSString *imageName = [NSString stringWithFormat:@"window%i.png",(arc4random() % 2) + 1];
     NSLog(@"%@",imageName);
     
-    [view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:imageName]]];
-    [view setGoal:goal];
+    [goalView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:imageName]]];
+    [goalView setGoal:goal];
+    [goalView setFrame:CGRectMake(goalView.frame.origin.x, goalView.frame.origin.y, 15.0 * [goalView.goal pointValue], 25.0 * [goalView.goal pointValue])];
     
-    return view;
+    return goalView;
 }
 
 - (id)init

@@ -9,7 +9,6 @@
 #ifndef Construct_ModelHeaders_h
 #define Construct_ModelHeaders_h
 
-
 #import "Goal.h"
 #import "Category.h"
 #import "Activity.h"
