@@ -21,7 +21,7 @@
     int height = abs(start.y - end.y);
     
     Road *road = [[Road alloc] initWithFrame:CGRectMake(start.x, start.y, width, size * 10.0)];
-    [road setBackgroundColor:[UIColor lightGrayColor]];
+    [road setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"road.png"]]];
     [road setUserInteractionEnabled:NO];
     
     [road.layer setAnchorPoint:CGPointMake(0.0, 0.0)];

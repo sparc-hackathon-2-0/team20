@@ -20,6 +20,8 @@
 		EF25E70B15E91E6200BDB7C0 /* GoalView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF25E70A15E91E6200BDB7C0 /* GoalView.m */; };
 		EF25E71115E921B700BDB7C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF25E71015E921B700BDB7C0 /* QuartzCore.framework */; };
 		EF25E71815E9321200BDB7C0 /* Road.m in Sources */ = {isa = PBXBuildFile; fileRef = EF25E71715E9321200BDB7C0 /* Road.m */; };
+		EFFDEE0615E956A60067F854 /* road.png in Resources */ = {isa = PBXBuildFile; fileRef = EFFDEE0415E956A60067F854 /* road.png */; };
+		EFFDEE0715E956A60067F854 /* road@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFFDEE0515E956A60067F854 /* road@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		EF25E71015E921B700BDB7C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EF25E71615E9321200BDB7C0 /* Road.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Road.h; sourceTree = "<group>"; };
 		EF25E71715E9321200BDB7C0 /* Road.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Road.m; sourceTree = "<group>"; };
+		EFFDEE0415E956A60067F854 /* road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road.png; sourceTree = "<group>"; };
+		EFFDEE0515E956A60067F854 /* road@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "road@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 		EF25E70115E9196900BDB7C0 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				EFFDEE0415E956A60067F854 /* road.png */,
+				EFFDEE0515E956A60067F854 /* road@2x.png */,
 				EF25E70215E9196900BDB7C0 /* backgroundTile.png */,
 				EF25E70315E9196900BDB7C0 /* backgroundTile@2x.png */,
 			);
@@ -182,6 +188,8 @@
 				EF25E6F815E9170400BDB7C0 /* MainStoryboard.storyboard in Resources */,
 				EF25E70415E9196900BDB7C0 /* backgroundTile.png in Resources */,
 				EF25E70515E9196900BDB7C0 /* backgroundTile@2x.png in Resources */,
+				EFFDEE0615E956A60067F854 /* road.png in Resources */,
+				EFFDEE0715E956A60067F854 /* road@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +322,7 @@
 				EF25E70015E9170400BDB7C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
