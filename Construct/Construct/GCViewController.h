@@ -15,6 +15,8 @@
     UIView *mapContent;
     
     NSMutableDictionary *dragging;
+    
+    UIPopoverController *goalViewInfoPopoverController;
 }
 
 @end

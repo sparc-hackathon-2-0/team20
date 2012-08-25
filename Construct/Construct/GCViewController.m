@@ -79,6 +79,8 @@
     return YES;
 }
 
+#pragma mark - Actvities
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"%@", segue.identifier);
@@ -121,9 +123,9 @@
         goalViews = [NSMutableArray array];
     }
 
-    GoalView *view = [GoalView viewWithGoal:goal];
-    [view setCenter:point];
-    [mapContent addSubview:view];
+    GoalView *goalView = [GoalView viewWithGoal:goal];
+    [goalView setCenter:point];
+    [mapContent addSubview:goalView];
     
     NSLog(@"MapContent: %@",mapContent);
     
@@ -131,12 +133,28 @@
         
     }
     
-    UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
-    [view addGestureRecognizer:gesture];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    [goalView addGestureRecognizer:panGesture];
     
-    [goalViews addObject:view];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goalViewTapped:)];
+    [goalView addGestureRecognizer:tapGesture];
     
-    return view;
+    [goalViews addObject:goalView];
+    
+    return goalView;
+}
+
+- (void)goalViewTapped:(UITapGestureRecognizer *)gesture
+{
+    GoalView *goalView = (GoalView *)[gesture view];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Activity" bundle:nil];
+//    UIViewController *goalInfoViewController = [storyboard instantiateViewControllerWithIdentifier:@"GoalInfoViewController"];
+    UIViewController *goalInfoViewController = [[UIViewController alloc] init];
+    [goalInfoViewController setContentSizeForViewInPopover:CGSizeMake(320.0, 480.0)];
+    
+    goalViewInfoPopoverController = [[UIPopoverController alloc] initWithContentViewController:goalInfoViewController];
+    [goalViewInfoPopoverController presentPopoverFromRect:goalView.frame inView:mapContent permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 #pragma mark - GoalListDelegate methods
@@ -185,6 +203,8 @@
     }
 }
 
+#pragma mark - Roads
+
 - (void)updateConnectionBetweenGoal:(GoalView *)goalA andAnotherGoal:(GoalView *)goalB
 {
     Road *aRoad = nil;
@@ -229,7 +249,7 @@
 //    }
 //}
 
-#pragma mark UIScrollView Delegate
+#pragma mark - UIScrollView Delegate
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
