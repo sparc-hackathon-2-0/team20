@@ -15,6 +15,8 @@
 		EF25E6F515E9170400BDB7C0 /* GCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF25E6F415E9170400BDB7C0 /* GCAppDelegate.m */; };
 		EF25E6F815E9170400BDB7C0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF25E6F615E9170400BDB7C0 /* MainStoryboard.storyboard */; };
 		EF25E6FB15E9170400BDB7C0 /* GCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF25E6FA15E9170400BDB7C0 /* GCViewController.m */; };
+		EF25E70415E9196900BDB7C0 /* backgroundTile.png in Resources */ = {isa = PBXBuildFile; fileRef = EF25E70215E9196900BDB7C0 /* backgroundTile.png */; };
+		EF25E70515E9196900BDB7C0 /* backgroundTile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF25E70315E9196900BDB7C0 /* backgroundTile@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		EF25E6F715E9170400BDB7C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		EF25E6F915E9170400BDB7C0 /* GCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCViewController.h; sourceTree = "<group>"; };
 		EF25E6FA15E9170400BDB7C0 /* GCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCViewController.m; sourceTree = "<group>"; };
+		EF25E70215E9196900BDB7C0 /* backgroundTile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTile.png; sourceTree = "<group>"; };
+		EF25E70315E9196900BDB7C0 /* backgroundTile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundTile@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 				EF25E6F615E9170400BDB7C0 /* MainStoryboard.storyboard */,
 				EF25E6F915E9170400BDB7C0 /* GCViewController.h */,
 				EF25E6FA15E9170400BDB7C0 /* GCViewController.m */,
+				EF25E70115E9196900BDB7C0 /* images */,
 				EF25E6EB15E9170400BDB7C0 /* Supporting Files */,
 			);
 			path = Construct;
@@ -96,6 +101,15 @@
 				EF25E6F215E9170400BDB7C0 /* Construct-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EF25E70115E9196900BDB7C0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EF25E70215E9196900BDB7C0 /* backgroundTile.png */,
+				EF25E70315E9196900BDB7C0 /* backgroundTile@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +166,8 @@
 			files = (
 				EF25E6EF15E9170400BDB7C0 /* InfoPlist.strings in Resources */,
 				EF25E6F815E9170400BDB7C0 /* MainStoryboard.storyboard in Resources */,
+				EF25E70415E9196900BDB7C0 /* backgroundTile.png in Resources */,
+				EF25E70515E9196900BDB7C0 /* backgroundTile@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
