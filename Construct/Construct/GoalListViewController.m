@@ -93,7 +93,7 @@
     NSError *error = nil;
     [[selectedGoal managedObjectContext] save:&error];
   
-    [self.goalEditDelegate finishedAddingGoal:selectedGoal sender:self];
+    [self.goalListDelegate finishedAddingGoal:selectedGoal sender:self];
     
 }
 
@@ -120,7 +120,7 @@
 
 - (IBAction)cancelAddGoal:(id)sender {
     
-    [self.goalEditDelegate cancelledAddingGoal:self];
+    [self.goalListDelegate cancelledAddingGoal:self];
 }
 
 @end
