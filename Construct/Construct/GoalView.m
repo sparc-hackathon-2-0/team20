@@ -13,7 +13,11 @@
 + (id)viewWithGoal:(id)goal
 {
     GoalView *view = [[GoalView alloc] init];
-    [view setBackgroundColor:[UIColor whiteColor]];
+    
+    NSString *imageName = [NSString stringWithFormat:@"window%i.png",(arc4random() % 2) + 1];
+    NSLog(@"%@",imageName);
+    
+    [view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:imageName]]];
     [view setGoal:goal];
     
     return view;
@@ -32,7 +36,7 @@
 
 - (void)setLevel:(NSNumber *)level
 {
-    [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 44.0 * level.intValue, 44.0 * level.intValue)];
+    [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 30.0 * level.intValue, 50.0 * level.intValue)];
 }
 
 /*

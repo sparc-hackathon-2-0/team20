@@ -39,6 +39,10 @@
 		EF25E71815E9321200BDB7C0 /* Road.m in Sources */ = {isa = PBXBuildFile; fileRef = EF25E71715E9321200BDB7C0 /* Road.m */; };
 		EFFDEE0615E956A60067F854 /* road.png in Resources */ = {isa = PBXBuildFile; fileRef = EFFDEE0415E956A60067F854 /* road.png */; };
 		EFFDEE0715E956A60067F854 /* road@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFFDEE0515E956A60067F854 /* road@2x.png */; };
+		EFFDEE1D15E964660067F854 /* window1.png in Resources */ = {isa = PBXBuildFile; fileRef = EFFDEE1915E964660067F854 /* window1.png */; };
+		EFFDEE1E15E964660067F854 /* window1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFFDEE1A15E964660067F854 /* window1@2x.png */; };
+		EFFDEE1F15E964660067F854 /* window2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFFDEE1B15E964660067F854 /* window2.png */; };
+		EFFDEE2015E964660067F854 /* window2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFFDEE1C15E964660067F854 /* window2@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +100,10 @@
 		EF25E71715E9321200BDB7C0 /* Road.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Road.m; sourceTree = "<group>"; };
 		EFFDEE0415E956A60067F854 /* road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road.png; sourceTree = "<group>"; };
 		EFFDEE0515E956A60067F854 /* road@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "road@2x.png"; sourceTree = "<group>"; };
+		EFFDEE1915E964660067F854 /* window1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = window1.png; sourceTree = "<group>"; };
+		EFFDEE1A15E964660067F854 /* window1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window1@2x.png"; sourceTree = "<group>"; };
+		EFFDEE1B15E964660067F854 /* window2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = window2.png; sourceTree = "<group>"; };
+		EFFDEE1C15E964660067F854 /* window2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +248,10 @@
 			children = (
 				EFFDEE0415E956A60067F854 /* road.png */,
 				EFFDEE0515E956A60067F854 /* road@2x.png */,
+				EFFDEE1915E964660067F854 /* window1.png */,
+				EFFDEE1A15E964660067F854 /* window1@2x.png */,
+				EFFDEE1B15E964660067F854 /* window2.png */,
+				EFFDEE1C15E964660067F854 /* window2@2x.png */,
 				EF25E70215E9196900BDB7C0 /* backgroundTile.png */,
 				EF25E70315E9196900BDB7C0 /* backgroundTile@2x.png */,
 			);
@@ -306,6 +318,10 @@
 				EFFDEE0715E956A60067F854 /* road@2x.png in Resources */,
 				64ABBCB415E92FB400667B60 /* default_Construct.sqlite in Resources */,
 				64ABBCE115E9487600667B60 /* Activity.storyboard in Resources */,
+				EFFDEE1D15E964660067F854 /* window1.png in Resources */,
+				EFFDEE1E15E964660067F854 /* window1@2x.png in Resources */,
+				EFFDEE1F15E964660067F854 /* window2.png in Resources */,
+				EFFDEE2015E964660067F854 /* window2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
