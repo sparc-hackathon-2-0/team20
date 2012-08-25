@@ -62,6 +62,8 @@
     [goalB setConnections:[NSMutableArray arrayWithObjects:goalC, goalD, nil]];
     
     [goalD setConnections:[NSMutableArray arrayWithObject:goalC]];
+    
+    [self updateConnections];
 }
 
 - (void)viewDidUnload
