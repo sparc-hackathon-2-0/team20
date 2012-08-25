@@ -16,6 +16,12 @@
 		64ABBCAD15E9213F00667B60 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCAC15E9212B00667B60 /* CoreDataManager.m */; };
 		64ABBCAE15E9214200667B60 /* CoreDataManager+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCAA15E9210100667B60 /* CoreDataManager+Helper.m */; };
 		64ABBCB415E92FB400667B60 /* default_Construct.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 64ABBCB315E92FB400667B60 /* default_Construct.sqlite */; };
+		64ABBCBC15E93F1600667B60 /* ActivityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCBB15E93F1600667B60 /* ActivityListViewController.m */; };
+		64ABBCBF15E93F2700667B60 /* ActivityEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCBE15E93F2700667B60 /* ActivityEditViewController.m */; };
+		64ABBCC315E93F6000667B60 /* Activity+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCC215E93F6000667B60 /* Activity+Helper.m */; };
+		64ABBCDA15E940D100667B60 /* Goal+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCD915E940D100667B60 /* Goal+Helper.m */; };
+		64ABBCDD15E940E400667B60 /* Category+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCDC15E940E400667B60 /* Category+Helper.m */; };
+		64ABBCE115E9487600667B60 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64ABBCE015E9487600667B60 /* Activity.storyboard */; };
 		D2A0506015E93252001F9936 /* GoalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0505F15E93252001F9936 /* GoalListViewController.m */; };
 		D2A0506315E93CDC001F9936 /* GoalEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0506215E93CDC001F9936 /* GoalEditViewController.m */; };
 		EF25E6E515E9170400BDB7C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF25E6E415E9170400BDB7C0 /* UIKit.framework */; };
@@ -44,6 +50,19 @@
 		64ABBCAB15E9212B00667B60 /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		64ABBCAC15E9212B00667B60 /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		64ABBCB315E92FB400667B60 /* default_Construct.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_Construct.sqlite; sourceTree = "<group>"; };
+		64ABBCBA15E93F1600667B60 /* ActivityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityListViewController.h; sourceTree = "<group>"; };
+		64ABBCBB15E93F1600667B60 /* ActivityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityListViewController.m; sourceTree = "<group>"; };
+		64ABBCBD15E93F2700667B60 /* ActivityEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityEditViewController.h; sourceTree = "<group>"; };
+		64ABBCBE15E93F2700667B60 /* ActivityEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityEditViewController.m; sourceTree = "<group>"; };
+		64ABBCC115E93F6000667B60 /* Activity+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Activity+Helper.h"; sourceTree = "<group>"; };
+		64ABBCC215E93F6000667B60 /* Activity+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Activity+Helper.m"; sourceTree = "<group>"; };
+		64ABBCD815E940D100667B60 /* Goal+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Goal+Helper.h"; sourceTree = "<group>"; };
+		64ABBCD915E940D100667B60 /* Goal+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Goal+Helper.m"; sourceTree = "<group>"; };
+		64ABBCDB15E940E400667B60 /* Category+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Category+Helper.h"; sourceTree = "<group>"; };
+		64ABBCDC15E940E400667B60 /* Category+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Category+Helper.m"; sourceTree = "<group>"; };
+		64ABBCDE15E942B000667B60 /* ModelHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeaders.h; sourceTree = "<group>"; };
+		64ABBCDF15E942E300667B60 /* GCAppConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCAppConstants.h; sourceTree = "<group>"; };
+		64ABBCE015E9487600667B60 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		D2A0505E15E93252001F9936 /* GoalListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalListViewController.h; sourceTree = "<group>"; };
 		D2A0505F15E93252001F9936 /* GoalListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalListViewController.m; sourceTree = "<group>"; };
 		D2A0506115E93CDC001F9936 /* GoalEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalEditViewController.h; sourceTree = "<group>"; };
@@ -84,6 +103,8 @@
 				EF25E6F615E9170400BDB7C0 /* MainStoryboard.storyboard */,
 				EF25E6F315E9170400BDB7C0 /* GCAppDelegate.h */,
 				EF25E6F415E9170400BDB7C0 /* GCAppDelegate.m */,
+				64ABBCDF15E942E300667B60 /* GCAppConstants.h */,
+				64ABBCE015E9487600667B60 /* Activity.storyboard */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -91,6 +112,7 @@
 		64ABBC8315E91A5D00667B60 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				64ABBCC015E93F3400667B60 /* Helpers */,
 				64ABBCAB15E9212B00667B60 /* CoreDataManager.h */,
 				64ABBCAC15E9212B00667B60 /* CoreDataManager.m */,
 				64ABBCA915E9210100667B60 /* CoreDataManager+Helper.h */,
@@ -104,13 +126,31 @@
 				64ABBC9315E91F9800667B60 /* Category.m */,
 				64ABBC8C15E91F9800667B60 /* Goal.h */,
 				64ABBC8D15E91F9800667B60 /* Goal.m */,
+				64ABBCDE15E942B000667B60 /* ModelHeaders.h */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		64ABBCC015E93F3400667B60 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				64ABBCC115E93F6000667B60 /* Activity+Helper.h */,
+				64ABBCC215E93F6000667B60 /* Activity+Helper.m */,
+				64ABBCDB15E940E400667B60 /* Category+Helper.h */,
+				64ABBCDC15E940E400667B60 /* Category+Helper.m */,
+				64ABBCD815E940D100667B60 /* Goal+Helper.h */,
+				64ABBCD915E940D100667B60 /* Goal+Helper.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		D2A0505C15E93228001F9936 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				64ABBCBD15E93F2700667B60 /* ActivityEditViewController.h */,
+				64ABBCBE15E93F2700667B60 /* ActivityEditViewController.m */,
+				64ABBCBA15E93F1600667B60 /* ActivityListViewController.h */,
+				64ABBCBB15E93F1600667B60 /* ActivityListViewController.m */,
 				D2A0505E15E93252001F9936 /* GoalListViewController.h */,
 				D2A0505F15E93252001F9936 /* GoalListViewController.m */,
 				D2A0506115E93CDC001F9936 /* GoalEditViewController.h */,
@@ -150,9 +190,9 @@
 		EF25E6EA15E9170400BDB7C0 /* Construct */ = {
 			isa = PBXGroup;
 			children = (
-				D2A0505C15E93228001F9936 /* ViewControllers */,
-				64ABBC8315E91A5D00667B60 /* CoreData */,
 				64ABBC8115E91A5700667B60 /* Application */,
+				64ABBC8315E91A5D00667B60 /* CoreData */,
+				D2A0505C15E93228001F9936 /* ViewControllers */,
 				EF25E6F915E9170400BDB7C0 /* GCViewController.h */,
 				EF25E6FA15E9170400BDB7C0 /* GCViewController.m */,
 				EF25E6EB15E9170400BDB7C0 /* Supporting Files */,
@@ -227,6 +267,7 @@
 				EF25E6EF15E9170400BDB7C0 /* InfoPlist.strings in Resources */,
 				EF25E6F815E9170400BDB7C0 /* MainStoryboard.storyboard in Resources */,
 				64ABBCB415E92FB400667B60 /* default_Construct.sqlite in Resources */,
+				64ABBCE115E9487600667B60 /* Activity.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +290,11 @@
 				64ABBCAE15E9214200667B60 /* CoreDataManager+Helper.m in Sources */,
 				D2A0506015E93252001F9936 /* GoalListViewController.m in Sources */,
 				D2A0506315E93CDC001F9936 /* GoalEditViewController.m in Sources */,
+				64ABBCBC15E93F1600667B60 /* ActivityListViewController.m in Sources */,
+				64ABBCBF15E93F2700667B60 /* ActivityEditViewController.m in Sources */,
+				64ABBCC315E93F6000667B60 /* Activity+Helper.m in Sources */,
+				64ABBCDA15E940D100667B60 /* Goal+Helper.m in Sources */,
+				64ABBCDD15E940E400667B60 /* Category+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

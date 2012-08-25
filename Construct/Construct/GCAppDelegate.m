@@ -8,23 +8,11 @@
 
 #import "GCAppDelegate.h"
 #import "CoreDataManager+Helper.h"
-#import "Goal.h"
 
 @interface GCAppDelegate (){
     BOOL isAppFirstLaunch;
 }
 @end
-
-// User Defaults Keys
-#define kUserDefaultsFirstRun @"firstRun"
-
-// App Settings
-#define COREDATA_CONSTRUCT @"Construct"
-
-#define COREDATA_CONSTRUCT_DBFILE @"Construct.sqlite"
-#define COREDATA_CONSTRUCT_DEFAULT_DBFILE @"default_Construct.sqlite"
-
-#define COREDATA_DEFAULT_EXTENSION @"momd"
 
 @implementation GCAppDelegate
 
@@ -105,9 +93,8 @@
         [coreDataManager saveContext];
     }
     
-   
     
-    }
+}
 
 - (void)createDataFile:(NSString *)dataFile fromDefault:(NSString *)defaultDataFile
 {

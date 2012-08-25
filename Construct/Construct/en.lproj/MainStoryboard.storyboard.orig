@@ -181,7 +181,11 @@
                     </connections>
                 </tableViewController>
             </objects>
+<<<<<<< HEAD
+            <point key="canvasLocation" x="3013" y="-528"/>
+=======
             <point key="canvasLocation" x="3149" y="-528"/>
+>>>>>>> Added new view controllers for activities and managed object categories
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5kN-Kd-zDP">

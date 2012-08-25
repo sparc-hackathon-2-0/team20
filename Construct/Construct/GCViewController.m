@@ -7,13 +7,18 @@
 //
 
 #import "GCViewController.h"
-#import "Goal.h"
+#import "ActivityListViewController.h"
 
 @interface GCViewController ()
+- (IBAction)displayActivities:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *activityButton;
+@property (nonatomic, strong) UIPopoverController *popover;
 
 @end
 
 @implementation GCViewController
+@synthesize popover;
+@synthesize activityButton;
 @synthesize managedObjectContext;
 @synthesize fetchedResultsController;
 
@@ -26,6 +31,8 @@
 
 - (void)viewDidUnload
 {
+    [self setActivityButton:nil];
+    [self setPopover:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -39,4 +46,20 @@
 {
     NSLog(@"%@", segue.identifier);
 }
+
+- (IBAction)displayActivities:(id)sender {
+  
+    UIStoryboard *activityStoryboard = [UIStoryboard storyboardWithName:@"Activity" bundle:nil];
+    
+    ActivityListViewController *activityListVC = [activityStoryboard instantiateViewControllerWithIdentifier:@"ActivityListViewController"];
+    
+    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:activityListVC];
+    
+    popover = [[UIPopoverController alloc] initWithContentViewController:navigationVC];
+    
+    [popover presentPopoverFromRect:activityButton.frame
+                             inView:self.view
+           permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
 @end
