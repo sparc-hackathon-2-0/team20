@@ -110,19 +110,22 @@
 
 - (GoalView *)addGoal:(Goal *)goal AtPoint:(CGPoint)point
 {
-    if (!goals) {
-        goals = [NSMutableArray array];
+    if (!goalViews) {
+        goalViews = [NSMutableArray array];
     }
 
     GoalView *view = [GoalView viewWithGoal:goal];
-    [view setLevel:[NSNumber numberWithInt:(arc4random() % 5) + 1]];
     [view setCenter:point];
     [map addSubview:view];
+    
+    for (GoalView *goalView in goalViews) {
+        
+    }
     
     UIPanGestureRecognizer *gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
     [view addGestureRecognizer:gesture];
     
-    [goals addObject:view];
+    [goalViews addObject:view];
     
     return view;
 }
@@ -130,10 +133,7 @@
 #pragma mark - GoalEditDelegate methods
 
 - (void)finishedAddingGoal:(Goal *)goal sender:(id)sender{
-    GoalView *goalView = [GoalView viewWithGoal:goal];
-    [goalView setLevel:[NSNumber numberWithInt:(arc4random() % 5) + 1]];
-    [goalView setCenter:[self.view center]];
-    [map addSubview:goalView];
+    [self addGoal:goal AtPoint:[self.view center]];
 }
 
 #pragma mark - Gestures
@@ -199,12 +199,21 @@
 
 - (void)updateConnections
 {
-    for (GoalView *goal in goals) {
+    for (GoalView *goal in goalViews) {
         for (GoalView *aGoal in goal.connections) {
             [self updateConnectionBetweenGoal:goal andAnotherGoal:aGoal];
         }
     }
 }
+
+//- (GoalView *)goalViewForGoal:(Goal *)goal
+//{
+//    for (GoalView *goal in goalViews) {
+//        if (goal.goal == goal) {
+//            return goal;
+//        }
+//    }
+//}
 
 #pragma mark UIScrollView Delegate
 

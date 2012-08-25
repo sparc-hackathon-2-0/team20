@@ -14,4 +14,8 @@
 #import "Category.h"
 #import "Activity.h"
 
+#import "Goal+Helper.h"
+#import "Category+Helper.h"
+#import "Activity+Helper.h"
+
 #endif

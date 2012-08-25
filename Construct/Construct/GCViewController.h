@@ -10,7 +10,7 @@
 
 @interface GCViewController : UIViewController <UIScrollViewDelegate>
 {
-    NSMutableArray *goals;
+    NSMutableArray *goalViews;
     UIScrollView *map;
     
     NSMutableDictionary *dragging;
