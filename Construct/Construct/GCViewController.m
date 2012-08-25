@@ -7,17 +7,22 @@
 //
 
 #import "GCViewController.h"
+#import "Goal.h"
 
 @interface GCViewController ()
 
 @end
 
 @implementation GCViewController
+@synthesize managedObjectContext;
+@synthesize fetchedResultsController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.managedObjectContext = self.managedObjectContext;
 }
 
 - (void)viewDidUnload

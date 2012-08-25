@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GCViewController : UIViewController
+@interface GCViewController : UIViewController {
+    NSFetchedResultsController *fetchedResultsController;
+    NSManagedObjectContext *managedObjectContext;
+}
 
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @end
