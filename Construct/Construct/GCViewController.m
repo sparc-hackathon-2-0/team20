@@ -105,7 +105,6 @@
     
     [self presentViewController:navigationVC animated:YES completion:nil];
     
-//    [self addGoal:nil AtPoint:CGPointMake(512.0, 384.0)];
 }
 
 - (GoalView *)addGoal:(Goal *)goal AtPoint:(CGPoint)point
