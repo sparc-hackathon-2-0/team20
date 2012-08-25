@@ -11,7 +11,7 @@
 #import "CoreDataManager+Helper.h"
 #import "Goal.h"
 
-@interface GoalListViewController ()
+@interface GoalListViewController () <GoalEditDelegate>
 @property (nonatomic,strong) CoreDataManager *coreDataManager;
 @property (nonatomic,strong) NSArray *goals;
 @end
@@ -19,7 +19,7 @@
 @implementation GoalListViewController
 @synthesize coreDataManager;
 @synthesize goals;
-@synthesize goalEditDelegate;
+@synthesize goalListDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -109,7 +109,17 @@
     if([segue.identifier isEqualToString:@"editGoalCell"]) {
         GoalEditViewController *goalEditVC = segue.destinationViewController;
         goalEditVC.goal = [goals objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        [goalEditVC setGoalEditDelegate:self];
     }
 
 }
+
+#pragma mark - Goal Edit Delegate
+
+- (void) savedGoal:(Goal *)goal sender:(id)sender
+{
+    [self.goalListDelegate finishedAddingGoal:goal sender:self];
+}
+
+
 @end
