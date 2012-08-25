@@ -13,5 +13,4 @@
 
 - (NSInteger)pointValue; // aggregate point value for all activities in this goal
 
-
 @end

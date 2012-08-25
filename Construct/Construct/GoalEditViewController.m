@@ -18,7 +18,7 @@
 @synthesize nameTextField;
 @synthesize descriptionTextView;
 @synthesize coreDataManager;
-@synthesize goal;
+@synthesize goal, goalEditDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -70,6 +70,8 @@
     NSError *error;
     [[goal managedObjectContext] save:&error];
     [[self navigationController] dismissModalViewControllerAnimated:YES];
+    
+    [self.goalEditDelegate finishedAddingGoal:goal sender:self];
 }
 
 - (IBAction)cancelEdit:(id)sender {

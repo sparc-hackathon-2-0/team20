@@ -10,7 +10,7 @@
 #import "GoalEditViewController.h"
 #import "ActivityListViewController.h"
 
-@interface GCViewController ()
+@interface GCViewController () <GoalEditDelegate>
 - (IBAction)displayActivities:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *activityButton;
 @property (nonatomic, strong) UIPopoverController *popover;
@@ -98,6 +98,7 @@
     // Present a Goal Edit view controller
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     GoalEditViewController *goalEditVC = [storyboard instantiateViewControllerWithIdentifier:@"GoalEditViewController"];
+    [goalEditVC setGoalEditDelegate:self];
     
     UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:goalEditVC];
     [navigationVC setModalPresentationStyle:UIModalPresentationFormSheet];
@@ -124,6 +125,15 @@
     [goals addObject:view];
     
     return view;
+}
+
+#pragma mark - GoalEditDelegate methods
+
+- (void)finishedAddingGoal:(Goal *)goal sender:(id)sender{
+    GoalView *goalView = [GoalView viewWithGoal:goal];
+    [goalView setLevel:[NSNumber numberWithInt:(arc4random() % 5) + 1]];
+    [goalView setCenter:[self.view center]];
+    [map addSubview:goalView];
 }
 
 #pragma mark - Gestures

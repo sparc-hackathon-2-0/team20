@@ -14,7 +14,7 @@
     
     CoreDataManager *coreDataManager = [CoreDataManager namedManagerWithName:COREDATA_CONSTRUCT];
     
-    
+    return 20;
     
 }
 
