@@ -7,6 +7,7 @@
 //
 
 #import "GoalListViewController.h"
+#import "GoalEditViewController.h"
 #import "CoreDataManager+Helper.h"
 #import "Goal.h"
 
@@ -33,16 +34,24 @@
     [super viewDidLoad];
 
      coreDataManager = [CoreDataManager namedManagerWithName:@"Construct"];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     goals = [NSArray arrayWithArray:[coreDataManager getAllForEntityNamed:@"Goal"
-                                    withPredicate:nil
-                                  sortDescriptors:nil]];
-    
+                                                             withPredicate:nil
+                                                           sortDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"goalName" ascending:YES selector:@selector(caseInsensitiveCompare:)] ] ] ];
+    NSLog(@"vwa");
+    //[self.tableView reloadData];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"vda");
+
+    //[self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -85,44 +94,6 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -137,4 +108,12 @@
      */
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"editGoalCell"]) {
+        GoalEditViewController *goalEditVC = segue.destinationViewController;
+        goalEditVC.goal = [goals objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
+
+}
 @end
