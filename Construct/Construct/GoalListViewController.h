@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GoalEditDelegate;
+
 @interface GoalListViewController : UITableViewController
+
+@property (nonatomic, weak) id<GoalEditDelegate> goalEditDelegate;
+@end
+
+@protocol GoalEditDelegate <NSObject>
+
+@optional
+
+- (void)finishedAddingGoal:(Goal *)goal sender:(id)sender;
 
 @end

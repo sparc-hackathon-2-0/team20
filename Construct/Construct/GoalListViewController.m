@@ -19,6 +19,7 @@
 @implementation GoalListViewController
 @synthesize coreDataManager;
 @synthesize goals;
+@synthesize goalEditDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
