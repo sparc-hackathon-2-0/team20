@@ -17,6 +17,9 @@
 		EF25E6FB15E9170400BDB7C0 /* GCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF25E6FA15E9170400BDB7C0 /* GCViewController.m */; };
 		EF25E70415E9196900BDB7C0 /* backgroundTile.png in Resources */ = {isa = PBXBuildFile; fileRef = EF25E70215E9196900BDB7C0 /* backgroundTile.png */; };
 		EF25E70515E9196900BDB7C0 /* backgroundTile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF25E70315E9196900BDB7C0 /* backgroundTile@2x.png */; };
+		EF25E70B15E91E6200BDB7C0 /* GoalView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF25E70A15E91E6200BDB7C0 /* GoalView.m */; };
+		EF25E71115E921B700BDB7C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF25E71015E921B700BDB7C0 /* QuartzCore.framework */; };
+		EF25E71815E9321200BDB7C0 /* Road.m in Sources */ = {isa = PBXBuildFile; fileRef = EF25E71715E9321200BDB7C0 /* Road.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,11 @@
 		EF25E6FA15E9170400BDB7C0 /* GCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCViewController.m; sourceTree = "<group>"; };
 		EF25E70215E9196900BDB7C0 /* backgroundTile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundTile.png; sourceTree = "<group>"; };
 		EF25E70315E9196900BDB7C0 /* backgroundTile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroundTile@2x.png"; sourceTree = "<group>"; };
+		EF25E70915E91E6200BDB7C0 /* GoalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalView.h; sourceTree = "<group>"; };
+		EF25E70A15E91E6200BDB7C0 /* GoalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalView.m; sourceTree = "<group>"; };
+		EF25E71015E921B700BDB7C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EF25E71615E9321200BDB7C0 /* Road.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Road.h; sourceTree = "<group>"; };
+		EF25E71715E9321200BDB7C0 /* Road.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Road.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF25E71115E921B700BDB7C0 /* QuartzCore.framework in Frameworks */,
 				EF25E6E515E9170400BDB7C0 /* UIKit.framework in Frameworks */,
 				EF25E6E715E9170400BDB7C0 /* Foundation.framework in Frameworks */,
 				EF25E6E915E9170400BDB7C0 /* CoreGraphics.framework in Frameworks */,
@@ -71,6 +80,7 @@
 		EF25E6E315E9170400BDB7C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF25E71015E921B700BDB7C0 /* QuartzCore.framework */,
 				EF25E6E415E9170400BDB7C0 /* UIKit.framework */,
 				EF25E6E615E9170400BDB7C0 /* Foundation.framework */,
 				EF25E6E815E9170400BDB7C0 /* CoreGraphics.framework */,
@@ -86,6 +96,10 @@
 				EF25E6F615E9170400BDB7C0 /* MainStoryboard.storyboard */,
 				EF25E6F915E9170400BDB7C0 /* GCViewController.h */,
 				EF25E6FA15E9170400BDB7C0 /* GCViewController.m */,
+				EF25E70915E91E6200BDB7C0 /* GoalView.h */,
+				EF25E70A15E91E6200BDB7C0 /* GoalView.m */,
+				EF25E71615E9321200BDB7C0 /* Road.h */,
+				EF25E71715E9321200BDB7C0 /* Road.m */,
 				EF25E70115E9196900BDB7C0 /* images */,
 				EF25E6EB15E9170400BDB7C0 /* Supporting Files */,
 			);
@@ -181,6 +195,8 @@
 				EF25E6F115E9170400BDB7C0 /* main.m in Sources */,
 				EF25E6F515E9170400BDB7C0 /* GCAppDelegate.m in Sources */,
 				EF25E6FB15E9170400BDB7C0 /* GCViewController.m in Sources */,
+				EF25E70B15E91E6200BDB7C0 /* GoalView.m in Sources */,
+				EF25E71815E9321200BDB7C0 /* Road.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

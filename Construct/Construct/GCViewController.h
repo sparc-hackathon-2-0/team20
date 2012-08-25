@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GCViewController : UIViewController
+@interface GCViewController : UIViewController <UIScrollViewDelegate>
+{
+    NSMutableArray *goals;
+    UIScrollView *map;
+    
+    NSMutableDictionary *dragging;
+}
 
 @end
