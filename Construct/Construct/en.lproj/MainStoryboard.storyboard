@@ -13,15 +13,180 @@
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eGB-na-8ln">
+                                <rect key="frame" x="348" y="483" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Goals">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3Ad-tg-eHM" kind="popover" identifier="showGoals" popoverAnchorView="eGB-na-8ln" id="igr-Yb-mqD">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="-249" y="-528"/>
+        </scene>
+        <!--Goal List View Controller - Goals-->
+        <scene sceneID="3FI-kE-LbU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5df-bb-kwv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController storyboardIdentifier="GoalListViewController" title="Goals" id="HPa-GK-47i" customClass="GoalListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="A17-Ob-htQ">
+                        <rect key="frame" x="0.0" y="44" width="768" height="980"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GoalListCell" textLabel="EoD-4x-hxG" style="IBUITableViewCellStyleDefault" id="GsE-1e-Tef">
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EoD-4x-hxG">
+                                            <rect key="frame" x="10" y="0.0" width="748" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HPa-GK-47i" id="3EG-Ji-yUv"/>
+                            <outlet property="delegate" destination="HPa-GK-47i" id="vov-3d-2dO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Goals" id="y45-UG-dtu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oqU-wW-WPl">
+                            <connections>
+                                <segue destination="YOb-Ii-BRM" kind="push" id="8Wu-Fs-J4u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2132" y="-528"/>
+        </scene>
+        <!--Goal Edit View Controller - Add Goal-->
+        <scene sceneID="nUu-mP-O9B">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVl-h5-QHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="YOb-Ii-BRM" customClass="GoalEditViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="9SW-Bo-lPw">
+                        <rect key="frame" x="0.0" y="44" width="768" height="980"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Name" id="JfY-F3-pco">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VGY-AH-FZc">
+                                        <rect key="frame" x="0.0" y="54" width="768" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="45" y="1" width="678" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="jha-2h-em0">
+                                                    <rect key="frame" x="20" y="6" width="638" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Description" id="0bv-se-Q7P">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="467" id="7U4-7s-nhG">
+                                        <rect key="frame" x="0.0" y="144" width="768" height="469"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="45" y="1" width="678" height="466"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="5JO-nE-Yxq">
+                                                    <rect key="frame" x="20" y="20" width="638" height="426"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="YOb-Ii-BRM" id="Rfk-si-cWl"/>
+                            <outlet property="delegate" destination="YOb-Ii-BRM" id="2Ll-fW-5s8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Goal" id="j98-VO-oEz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Cbh-M9-lnQ">
+                            <connections>
+                                <action selector="cancelEdit:" destination="YOb-Ii-BRM" id="3DI-0Y-bJi"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9MJ-vU-ug7"/>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="3149" y="-494"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5kN-Kd-zDP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aus-2b-0Jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="3Ad-tg-eHM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nP1-0l-uGX"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nSD-Ja-lY6">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HPa-GK-47i" kind="relationship" relationship="rootViewController" id="u5s-xz-0cm"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1008" y="-528"/>
         </scene>
     </scenes>
     <classes>
         <class className="GCViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GCViewController.h"/>
+        </class>
+        <class className="GoalEditViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoalEditViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelEdit:"/>
+            </relationships>
+        </class>
+        <class className="GoalListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoalListViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

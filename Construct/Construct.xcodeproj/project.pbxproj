@@ -16,6 +16,8 @@
 		64ABBCAD15E9213F00667B60 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCAC15E9212B00667B60 /* CoreDataManager.m */; };
 		64ABBCAE15E9214200667B60 /* CoreDataManager+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCAA15E9210100667B60 /* CoreDataManager+Helper.m */; };
 		64ABBCB415E92FB400667B60 /* default_Construct.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 64ABBCB315E92FB400667B60 /* default_Construct.sqlite */; };
+		D2A0506015E93252001F9936 /* GoalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0505F15E93252001F9936 /* GoalListViewController.m */; };
+		D2A0506315E93CDC001F9936 /* GoalEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0506215E93CDC001F9936 /* GoalEditViewController.m */; };
 		EF25E6E515E9170400BDB7C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF25E6E415E9170400BDB7C0 /* UIKit.framework */; };
 		EF25E6E715E9170400BDB7C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF25E6E615E9170400BDB7C0 /* Foundation.framework */; };
 		EF25E6E915E9170400BDB7C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF25E6E815E9170400BDB7C0 /* CoreGraphics.framework */; };
@@ -42,6 +44,10 @@
 		64ABBCAB15E9212B00667B60 /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		64ABBCAC15E9212B00667B60 /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		64ABBCB315E92FB400667B60 /* default_Construct.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_Construct.sqlite; sourceTree = "<group>"; };
+		D2A0505E15E93252001F9936 /* GoalListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalListViewController.h; sourceTree = "<group>"; };
+		D2A0505F15E93252001F9936 /* GoalListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalListViewController.m; sourceTree = "<group>"; };
+		D2A0506115E93CDC001F9936 /* GoalEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalEditViewController.h; sourceTree = "<group>"; };
+		D2A0506215E93CDC001F9936 /* GoalEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalEditViewController.m; sourceTree = "<group>"; };
 		EF25E6E015E9170400BDB7C0 /* Construct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Construct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF25E6E415E9170400BDB7C0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EF25E6E615E9170400BDB7C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,6 +108,17 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
+		D2A0505C15E93228001F9936 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2A0505E15E93252001F9936 /* GoalListViewController.h */,
+				D2A0505F15E93252001F9936 /* GoalListViewController.m */,
+				D2A0506115E93CDC001F9936 /* GoalEditViewController.h */,
+				D2A0506215E93CDC001F9936 /* GoalEditViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		EF25E6D515E9170400BDB7C0 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +150,7 @@
 		EF25E6EA15E9170400BDB7C0 /* Construct */ = {
 			isa = PBXGroup;
 			children = (
+				D2A0505C15E93228001F9936 /* ViewControllers */,
 				64ABBC8315E91A5D00667B60 /* CoreData */,
 				64ABBC8115E91A5700667B60 /* Application */,
 				EF25E6F915E9170400BDB7C0 /* GCViewController.h */,
@@ -229,6 +247,8 @@
 				64ABBC9415E91F9800667B60 /* Category.m in Sources */,
 				64ABBCAD15E9213F00667B60 /* CoreDataManager.m in Sources */,
 				64ABBCAE15E9214200667B60 /* CoreDataManager+Helper.m in Sources */,
+				D2A0506015E93252001F9936 /* GoalListViewController.m in Sources */,
+				D2A0506315E93CDC001F9936 /* GoalEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,7 +22,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.managedObjectContext = self.managedObjectContext;
 }
 
 - (void)viewDidUnload
@@ -36,4 +35,8 @@
     return YES;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"%@", segue.identifier);
+}
 @end
