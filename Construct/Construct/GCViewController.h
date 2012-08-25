@@ -12,6 +12,7 @@
 {
     NSMutableArray *goalViews;
     UIScrollView *map;
+    UIView *mapContent;
     
     NSMutableDictionary *dragging;
 }

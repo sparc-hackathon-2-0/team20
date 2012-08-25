@@ -26,9 +26,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
-    
+        
     map = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [map setAutoresizingMask:self.view.autoresizingMask];
     [map setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTile.png"]]];
@@ -36,6 +34,9 @@
     [map setMinimumZoomScale:0.1];
     [map setMaximumZoomScale:1.0];
     [map setDelegate:self];
+    
+    mapContent = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, map.contentSize.width, map.contentSize.height)];
+    [map addSubview:mapContent];
     
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
     [addButton setCenter:CGPointMake(32.0, 736.0)];
@@ -49,8 +50,9 @@
 //    GoalView *goalA = [self addGoal:nil AtPoint:CGPointMake(256.0, 384.0)];
 //    GoalView *goalB = [self addGoal:nil AtPoint:CGPointMake(768.0, 512.0)];
 //    GoalView *goalC = [self addGoal:nil AtPoint:CGPointMake(512.0, 128.0)];
-//    GoalView *goalD = [self addGoal:nil AtPoint:CGPointMake(128.0, 704.0)];
-//    
+    Goal *goal = [[Goal alloc] init];
+    GoalView *goalD = [self addGoal:goal AtPoint:CGPointMake(128.0, 704.0)];
+//
 //    
 //    [goalA setConnections:[NSMutableArray arrayWithObjects:goalB, goalC, nil]];
 //    
@@ -115,7 +117,9 @@
 
     GoalView *view = [GoalView viewWithGoal:goal];
     [view setCenter:point];
-    [map addSubview:view];
+    [mapContent addSubview:view];
+    
+    NSLog(@"MapContent: %@",mapContent);
     
     for (GoalView *goalView in goalViews) {
         
@@ -216,9 +220,9 @@
 
 #pragma mark UIScrollView Delegate
 
-//- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
-//{
-//    return [goals objectAtIndex:0];
-//}
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return mapContent;
+}
 
 @end
