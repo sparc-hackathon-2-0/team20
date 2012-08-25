@@ -27,7 +27,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
         
-    map = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    map = [[UIScrollView alloc] initWithFrame:self.view.frame];
     [map setAutoresizingMask:self.view.autoresizingMask];
     [map setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTile.png"]]];
     [map setContentSize:CGSizeMake(2048.0, 1536.0)];
@@ -35,11 +35,13 @@
     [map setMaximumZoomScale:1.0];
     [map setDelegate:self];
     
-    mapContent = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, map.contentSize.width, map.contentSize.height)];
+    mapContent = [[UIView alloc] initWithFrame:map.bounds];
+    [mapContent setBackgroundColor:[UIColor lightGrayColor]];
     [map addSubview:mapContent];
     
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    [addButton setCenter:CGPointMake(32.0, 736.0)];
+    [addButton setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+    [addButton setCenter:CGPointMake(32.0, self.view.bounds.size.height - 32.0)];
     [addButton addTarget:self action:@selector(addGoal:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:map];
@@ -47,18 +49,19 @@
     
 //    GoalView *firstGoal = [self addGoal:nil AtPoint:CGPointMake(512.0, 128.0)];
 //    [firstGoal setConnections:[NSMutableArray arrayWithObjects:[self addGoal:nil AtPoint:CGPointMake(256.0, 384.0)], [self addGoal:nil AtPoint:CGPointMake(768.0, 512.0)], nil]];
-//    GoalView *goalA = [self addGoal:nil AtPoint:CGPointMake(256.0, 384.0)];
-//    GoalView *goalB = [self addGoal:nil AtPoint:CGPointMake(768.0, 512.0)];
-//    GoalView *goalC = [self addGoal:nil AtPoint:CGPointMake(512.0, 128.0)];
     Goal *goal = [[Goal alloc] init];
+
+    GoalView *goalA = [self addGoal:goal AtPoint:CGPointMake(256.0, 384.0)];
+    GoalView *goalB = [self addGoal:goal AtPoint:CGPointMake(768.0, 512.0)];
+    GoalView *goalC = [self addGoal:goal AtPoint:CGPointMake(512.0, 128.0)];
     GoalView *goalD = [self addGoal:goal AtPoint:CGPointMake(128.0, 704.0)];
 //
 //    
-//    [goalA setConnections:[NSMutableArray arrayWithObjects:goalB, goalC, nil]];
-//    
-//    [goalB setConnections:[NSMutableArray arrayWithObjects:goalC, goalD, nil]];
-//    
-//    [goalD setConnections:[NSMutableArray arrayWithObject:goalC]];
+    [goalA setConnections:[NSMutableArray arrayWithObjects:goalB, goalC, nil]];
+    
+    [goalB setConnections:[NSMutableArray arrayWithObjects:goalC, goalD, nil]];
+    
+    [goalD setConnections:[NSMutableArray arrayWithObject:goalC]];
 }
 
 - (void)viewDidUnload
@@ -155,13 +158,13 @@
         {       CGPoint touchInGoal = [gesture locationInView:goal];
             
             [goal.layer setAnchorPoint:CGPointMake(touchInGoal.x/goal.frame.size.width, touchInGoal.y/goal.frame.size.height)];
-            [goal setCenter:[gesture locationInView:map]];
+            [goal setCenter:[gesture locationInView:mapContent]];
         }   break;
             
         case UIGestureRecognizerStateChanged:
-            [goal setCenter:[gesture locationInView:map]];
+            [goal setCenter:[gesture locationInView:mapContent]];
             
-            [map scrollRectToVisible:goal.frame animated:YES];
+//            [map scrollRectToVisible:goal.frame animated:YES];
             
             [self updateConnections];
             break;
@@ -191,7 +194,7 @@
         [goalA.roads addObject:aRoad];
         [goalB.roads addObject:aRoad];
         
-        [map insertSubview:aRoad atIndex:0];
+        [mapContent insertSubview:aRoad atIndex:0];
     }
         
     [aRoad setStart:CGPointMake(goalA.frame.origin.x + goalA.frame.size.width/2.0, goalA.frame.origin.y + goalA.frame.size.height/2.0)];
@@ -224,6 +227,23 @@
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     return mapContent;
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    // The scroll view has zoomed, so you need to re-center the contents
+    NSLog(@"ScrollView Bounds: %@",NSStringFromCGRect(scrollView.bounds));
+    NSLog(@"ScrollView Frame: %@",NSStringFromCGRect(scrollView.frame));
+    NSLog(@"ScrollView Center: %@",NSStringFromCGPoint(scrollView.center));
+    NSLog(@"ScrollView ContentSize: %@",NSStringFromCGSize(scrollView.contentSize));
+    
+    NSLog(@"MapContent Bounds: %@",NSStringFromCGRect(mapContent.bounds));
+    NSLog(@"MapContent Frame: %@",NSStringFromCGRect(mapContent.frame));
+    NSLog(@"MapContent Center: %@",NSStringFromCGPoint(mapContent.center));
+    
+    
+    [mapContent setFrame:CGRectMake(0.0, 0.0, scrollView.contentSize.width, scrollView.contentSize.height)];
+    
+    [mapContent setCenter:self.view.center];
 }
 
 @end
