@@ -24,6 +24,7 @@
 @protocol GoalEditDelegate <NSObject>
 
 @optional
+
 - (void)finishedAddingGoal:(Goal *)goal sender:(id)sender;
 
 @end

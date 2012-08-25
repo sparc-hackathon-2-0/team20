@@ -7,6 +7,7 @@
 //
 
 #import "GCViewController.h"
+#import "GoalListViewController.h"
 #import "GoalEditViewController.h"
 #import "ActivityListViewController.h"
 
@@ -97,10 +98,9 @@
 {
     // Present a Goal Edit view controller
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    GoalEditViewController *goalEditVC = [storyboard instantiateViewControllerWithIdentifier:@"GoalEditViewController"];
-    [goalEditVC setGoalEditDelegate:self];
-    
-    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:goalEditVC];
+    GoalListViewController *goalListVC = [storyboard instantiateViewControllerWithIdentifier:@"GoalListViewController"];
+
+    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:goalListVC];
     [navigationVC setModalPresentationStyle:UIModalPresentationFormSheet];
     
     [self presentViewController:navigationVC animated:YES completion:nil];

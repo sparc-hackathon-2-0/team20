@@ -125,11 +125,11 @@
 		64ABBC8115E91A5700667B60 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				64ABBCE015E9487600667B60 /* Activity.storyboard */,
 				EF25E6F615E9170400BDB7C0 /* MainStoryboard.storyboard */,
 				EF25E6F315E9170400BDB7C0 /* GCAppDelegate.h */,
 				EF25E6F415E9170400BDB7C0 /* GCAppDelegate.m */,
 				64ABBCDF15E942E300667B60 /* GCAppConstants.h */,
-				64ABBCE015E9487600667B60 /* Activity.storyboard */,
 			);
 			name = Application;
 			sourceTree = "<group>";

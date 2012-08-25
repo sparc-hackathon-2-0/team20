@@ -93,7 +93,7 @@
                             <outlet property="delegate" destination="HPa-GK-47i" id="vov-3d-2dO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Goals" id="y45-UG-dtu">
+                    <navigationItem key="navigationItem" title="Select a Goal" id="y45-UG-dtu">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oqU-wW-WPl">
                             <connections>
                                 <segue destination="YOb-Ii-BRM" kind="push" identifier="addGoalCell" id="8Wu-Fs-J4u"/>
