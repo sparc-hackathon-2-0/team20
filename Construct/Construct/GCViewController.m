@@ -101,7 +101,7 @@
     // Present a Goal Edit view controller
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     GoalListViewController *goalListVC = [storyboard instantiateViewControllerWithIdentifier:@"GoalListViewController"];
-    [[goalListVC setGoalEditDelegate:self];
+    [goalListVC setGoalEditDelegate:self];
     
     UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:goalListVC];
     [navigationVC setModalPresentationStyle:UIModalPresentationFormSheet];
