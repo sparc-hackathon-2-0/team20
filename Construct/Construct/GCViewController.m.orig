@@ -27,6 +27,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+<<<<<<< HEAD
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handlePinch:)];
     
     map = [[UIScrollView alloc] initWithFrame:self.view.bounds];
@@ -57,6 +58,8 @@
     [goalB setConnections:[NSMutableArray arrayWithObjects:goalC, goalD, nil]];
     
     [goalD setConnections:[NSMutableArray arrayWithObject:goalC]];
+=======
+>>>>>>> coredata
 }
 
 - (void)viewDidUnload
@@ -72,26 +75,7 @@
     return YES;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSLog(@"%@", segue.identifier);
-}
-
-- (IBAction)displayActivities:(id)sender {
-  
-    UIStoryboard *activityStoryboard = [UIStoryboard storyboardWithName:@"Activity" bundle:nil];
-    
-    ActivityListViewController *activityListVC = [activityStoryboard instantiateViewControllerWithIdentifier:@"ActivityListViewController"];
-    
-    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:activityListVC];
-    
-    popover = [[UIPopoverController alloc] initWithContentViewController:navigationVC];
-    
-    [popover presentPopoverFromRect:activityButton.frame
-                             inView:self.view
-           permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-}
-
+<<<<<<< HEAD
 #pragma mark - Goals
 
 - (void)addGoal:(id)sender
@@ -197,4 +181,26 @@
 //    return [goals objectAtIndex:0];
 //}
 
+=======
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"%@", segue.identifier);
+}
+
+- (IBAction)displayActivities:(id)sender {
+  
+    UIStoryboard *activityStoryboard = [UIStoryboard storyboardWithName:@"Activity" bundle:nil];
+    
+    ActivityListViewController *activityListVC = [activityStoryboard instantiateViewControllerWithIdentifier:@"ActivityListViewController"];
+    
+    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:activityListVC];
+    
+    popover = [[UIPopoverController alloc] initWithContentViewController:navigationVC];
+    
+    [popover presentPopoverFromRect:activityButton.frame
+                             inView:self.view
+           permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+>>>>>>> coredata
 @end

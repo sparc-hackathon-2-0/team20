@@ -11,12 +11,15 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import <CoreData/CoreData.h>
-    #import "CoreDataManager+Helper.h"
-    #import"GCAppConstants.h"
-    #import "ModelHeaders.h"
+<<<<<<< HEAD
     #import <QuartzCore/QuartzCore.h>
 
     #import "GoalView.h"
     #import "Road.h"
+=======
+    #import <CoreData/CoreData.h>
+    #import "CoreDataManager+Helper.h"
+    #import"GCAppConstants.h"
+    #import "ModelHeaders.h"
+>>>>>>> coredata
 #endif

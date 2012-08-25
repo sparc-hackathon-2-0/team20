@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+<<<<<<< HEAD
 @interface GCViewController : UIViewController <UIScrollViewDelegate>
 {
     NSMutableArray *goals;
     UIScrollView *map;
     
     NSMutableDictionary *dragging;
+=======
+@interface GCViewController : UIViewController {
+    NSFetchedResultsController *fetchedResultsController;
+    NSManagedObjectContext *managedObjectContext;
+>>>>>>> coredata
 }
 
 

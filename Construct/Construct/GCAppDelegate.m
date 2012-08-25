@@ -7,12 +7,19 @@
 //
 
 #import "GCAppDelegate.h"
+#import "CoreDataManager+Helper.h"
+
+@interface GCAppDelegate (){
+    BOOL isAppFirstLaunch;
+}
+@end
 
 @implementation GCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self initializeApp];
     return YES;
 }
 							
@@ -41,6 +48,81 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+/**
+ Returns the URL to the application's Documents directory.
+ */
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+
+#pragma mark -  Initialization
+
+- (void)initializeApp{
+    
+    // Check for the initial run of the app
+    isAppFirstLaunch = (BOOL)[[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultsFirstRun];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // Setup persistent data stores
+    [self setupDataModels];
+}
+
+- (void)setupDataModels{
+    
+    // Create the config file on initial launch
+    if (!isAppFirstLaunch){
+        
+        // Create Data Models
+        [CoreDataManager managerWithName:COREDATA_CONSTRUCT
+                            withFileName:COREDATA_CONSTRUCT_DBFILE
+                           withExtension:COREDATA_DEFAULT_EXTENSION];
+        
+        [self createDataFile:COREDATA_CONSTRUCT_DBFILE fromDefault:COREDATA_CONSTRUCT_DEFAULT_DBFILE];
+        
+        // Setup Sample Data
+        CoreDataManager *coreDataManager = [CoreDataManager namedManagerWithName:COREDATA_CONSTRUCT];
+        Goal *firstGoal = [NSEntityDescription insertNewObjectForEntityForName:@"Goal"
+                                      inManagedObjectContext:[coreDataManager managedObjectContext]];
+        
+        [firstGoal setGoalName:@"My first goal"];
+        [coreDataManager saveContext];
+    }
+    
+    
+}
+
+- (void)createDataFile:(NSString *)dataFile fromDefault:(NSString *)defaultDataFile
+{
+    //First, test for existence - we don't want to wipe out a user's DB
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *documentsDirectory = [[self applicationDocumentsDirectory] path];
+    
+    NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:dataFile];
+    
+    BOOL dbexists = [fileManager fileExistsAtPath: writableDBPath];
+    
+    if (!dbexists)
+    {
+        // The writable database does not exist, so copy the default to the appropriate location
+        NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:defaultDataFile];
+        
+        NSError *error;
+        BOOL success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
+        
+        if (!success) {
+            //NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+            // create new database is one doesn't exist
+        }
+        
+    }else {
+        // Default file doesn't exist, create new file
+        
+    }
 }
 
 @end

@@ -103,8 +103,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				EF25E71115E921B700BDB7C0 /* QuartzCore.framework in Frameworks */,
+=======
 				64ABBC8815E91A7F00667B60 /* CoreData.framework in Frameworks */,
+>>>>>>> coredata
 				EF25E6E515E9170400BDB7C0 /* UIKit.framework in Frameworks */,
 				EF25E6E715E9170400BDB7C0 /* Foundation.framework in Frameworks */,
 				EF25E6E915E9170400BDB7C0 /* CoreGraphics.framework in Frameworks */,
@@ -196,8 +199,11 @@
 		EF25E6E315E9170400BDB7C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				EF25E71015E921B700BDB7C0 /* QuartzCore.framework */,
+=======
 				64ABBC8715E91A7F00667B60 /* CoreData.framework */,
+>>>>>>> coredata
 				EF25E6E415E9170400BDB7C0 /* UIKit.framework */,
 				EF25E6E615E9170400BDB7C0 /* Foundation.framework */,
 				EF25E6E815E9170400BDB7C0 /* CoreGraphics.framework */,
@@ -300,12 +306,15 @@
 			files = (
 				EF25E6EF15E9170400BDB7C0 /* InfoPlist.strings in Resources */,
 				EF25E6F815E9170400BDB7C0 /* MainStoryboard.storyboard in Resources */,
+<<<<<<< HEAD
 				EF25E70415E9196900BDB7C0 /* backgroundTile.png in Resources */,
 				EF25E70515E9196900BDB7C0 /* backgroundTile@2x.png in Resources */,
 				EFFDEE0615E956A60067F854 /* road.png in Resources */,
 				EFFDEE0715E956A60067F854 /* road@2x.png in Resources */,
+=======
 				64ABBCB415E92FB400667B60 /* default_Construct.sqlite in Resources */,
 				64ABBCE115E9487600667B60 /* Activity.storyboard in Resources */,
+>>>>>>> coredata
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,8 +328,10 @@
 				EF25E6F115E9170400BDB7C0 /* main.m in Sources */,
 				EF25E6F515E9170400BDB7C0 /* GCAppDelegate.m in Sources */,
 				EF25E6FB15E9170400BDB7C0 /* GCViewController.m in Sources */,
+<<<<<<< HEAD
 				EF25E70B15E91E6200BDB7C0 /* GoalView.m in Sources */,
 				EF25E71815E9321200BDB7C0 /* Road.m in Sources */,
+=======
 				64ABBC8615E91A7200667B60 /* Construct.xcdatamodeld in Sources */,
 				64ABBC8B15E91F8C00667B60 /* ActivityTag.m in Sources */,
 				64ABBC8E15E91F9800667B60 /* Goal.m in Sources */,
@@ -335,6 +346,7 @@
 				64ABBCC315E93F6000667B60 /* Activity+Helper.m in Sources */,
 				64ABBCDA15E940D100667B60 /* Goal+Helper.m in Sources */,
 				64ABBCDD15E940E400667B60 /* Category+Helper.m in Sources */,
+>>>>>>> coredata
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
