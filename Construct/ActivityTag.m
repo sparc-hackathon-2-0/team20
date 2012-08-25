@@ -7,6 +7,7 @@
 //
 
 #import "ActivityTag.h"
+#import "Activity.h"
 
 
 @implementation ActivityTag
@@ -14,5 +15,6 @@
 @dynamic activitityTagName;
 @dynamic activityTagDescription;
 @dynamic creationDate;
+@dynamic activities;
 
 @end

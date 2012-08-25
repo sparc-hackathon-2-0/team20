@@ -143,6 +143,11 @@
 
 - (void)finishedAddingGoal:(Goal *)goal sender:(id)sender{
     [self addGoal:goal AtPoint:[self.view center]];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)cancelledAddingGoal:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Gestures

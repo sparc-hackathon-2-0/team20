@@ -14,6 +14,9 @@
 @interface GoalListViewController () <GoalEditDelegate>
 @property (nonatomic,strong) CoreDataManager *coreDataManager;
 @property (nonatomic,strong) NSArray *goals;
+
+- (IBAction)cancelAddGoal:(id)sender;
+
 @end
 
 @implementation GoalListViewController
@@ -40,19 +43,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    goals = [NSArray arrayWithArray:[coreDataManager getAllForEntityNamed:@"Goal"
-                                                             withPredicate:nil
-                                                           sortDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"goalName" ascending:YES selector:@selector(caseInsensitiveCompare:)] ] ] ];
-    NSLog(@"vwa");
-    //[self.tableView reloadData];
-}
+    goals = [Goal availableGoals];
 
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    NSLog(@"vda");
-
-    //[self.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -74,7 +66,7 @@
 {
     // Return the number of rows in the section.
    
-    return [coreDataManager getCountForEntity:@"Goal" withPredicate:nil];;
+    return [goals count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -95,19 +87,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    Goal *selectedGoal = [goals objectAtIndex:indexPath.row];
+    [selectedGoal setInProgress:[NSNumber numberWithBool:YES]];
+    
+    NSError *error = nil;
+    [[selectedGoal managedObjectContext] save:&error];
+  
+    [self.goalEditDelegate finishedAddingGoal:selectedGoal sender:self];
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"editGoalCell"]) {
+       
         GoalEditViewController *goalEditVC = segue.destinationViewController;
+        
         goalEditVC.goal = [goals objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         [goalEditVC setGoalEditDelegate:self];
     }
@@ -121,5 +116,11 @@
     [self.goalListDelegate finishedAddingGoal:goal sender:self];
 }
 
+
+
+- (IBAction)cancelAddGoal:(id)sender {
+    
+    [self.goalEditDelegate cancelledAddingGoal:self];
+}
 
 @end

@@ -9,20 +9,22 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Activity;
 
 @interface Goal : NSManagedObject
 
-@property (nonatomic, retain) NSString * goalDescription;
-@property (nonatomic, retain) NSString * goalName;
 @property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSDate * dueDate;
+@property (nonatomic, retain) NSString * goalDescription;
+@property (nonatomic, retain) NSString * goalName;
+@property (nonatomic, retain) NSNumber * inProgress;
 @property (nonatomic, retain) NSSet *activities;
 @end
 
 @interface Goal (CoreDataGeneratedAccessors)
 
-- (void)addActivitiesObject:(NSManagedObject *)value;
-- (void)removeActivitiesObject:(NSManagedObject *)value;
+- (void)addActivitiesObject:(Activity *)value;
+- (void)removeActivitiesObject:(Activity *)value;
 - (void)addActivities:(NSSet *)values;
 - (void)removeActivities:(NSSet *)values;
 

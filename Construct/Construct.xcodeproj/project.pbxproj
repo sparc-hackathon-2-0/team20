@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		64ABBC8615E91A7200667B60 /* Construct.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBC8415E91A7200667B60 /* Construct.xcdatamodeld */; };
 		64ABBC8815E91A7F00667B60 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64ABBC8715E91A7F00667B60 /* CoreData.framework */; };
-		64ABBC8B15E91F8C00667B60 /* ActivityTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBC8A15E91F8C00667B60 /* ActivityTag.m */; };
-		64ABBC8E15E91F9800667B60 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBC8D15E91F9800667B60 /* Goal.m */; };
-		64ABBC9115E91F9800667B60 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBC9015E91F9800667B60 /* Activity.m */; };
-		64ABBC9415E91F9800667B60 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBC9315E91F9800667B60 /* Category.m */; };
 		64ABBCAD15E9213F00667B60 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCAC15E9212B00667B60 /* CoreDataManager.m */; };
 		64ABBCAE15E9214200667B60 /* CoreDataManager+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCAA15E9210100667B60 /* CoreDataManager+Helper.m */; };
 		64ABBCB415E92FB400667B60 /* default_Construct.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 64ABBCB315E92FB400667B60 /* default_Construct.sqlite */; };
@@ -22,6 +18,10 @@
 		64ABBCDA15E940D100667B60 /* Goal+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCD915E940D100667B60 /* Goal+Helper.m */; };
 		64ABBCDD15E940E400667B60 /* Category+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBCDC15E940E400667B60 /* Category+Helper.m */; };
 		64ABBCE115E9487600667B60 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64ABBCE015E9487600667B60 /* Activity.storyboard */; };
+		64ABBD1515E9809600667B60 /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBD1415E9809600667B60 /* Category.m */; };
+		64ABBD1B15E9809600667B60 /* ActivityTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBD1A15E9809600667B60 /* ActivityTag.m */; };
+		64ABBD1E15E9826C00667B60 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBD1D15E9826C00667B60 /* Activity.m */; };
+		64ABBD2115E98B1E00667B60 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ABBD2015E98B1E00667B60 /* Goal.m */; };
 		D2A0506015E93252001F9936 /* GoalListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0505F15E93252001F9936 /* GoalListViewController.m */; };
 		D2A0506315E93CDC001F9936 /* GoalEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A0506215E93CDC001F9936 /* GoalEditViewController.m */; };
 		EF25E6E515E9170400BDB7C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF25E6E415E9170400BDB7C0 /* UIKit.framework */; };
@@ -48,14 +48,6 @@
 /* Begin PBXFileReference section */
 		64ABBC8515E91A7200667B60 /* Construct.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Construct.xcdatamodel; sourceTree = "<group>"; };
 		64ABBC8715E91A7F00667B60 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		64ABBC8915E91F8C00667B60 /* ActivityTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTag.h; sourceTree = "<group>"; };
-		64ABBC8A15E91F8C00667B60 /* ActivityTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTag.m; sourceTree = "<group>"; };
-		64ABBC8C15E91F9800667B60 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Goal.h; path = ../Goal.h; sourceTree = "<group>"; };
-		64ABBC8D15E91F9800667B60 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Goal.m; path = ../Goal.m; sourceTree = "<group>"; };
-		64ABBC8F15E91F9800667B60 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = ../Activity.h; sourceTree = "<group>"; };
-		64ABBC9015E91F9800667B60 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = ../Activity.m; sourceTree = "<group>"; };
-		64ABBC9215E91F9800667B60 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Category.h; path = ../Category.h; sourceTree = "<group>"; };
-		64ABBC9315E91F9800667B60 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Category.m; path = ../Category.m; sourceTree = "<group>"; };
 		64ABBCA915E9210100667B60 /* CoreDataManager+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreDataManager+Helper.h"; sourceTree = "<group>"; };
 		64ABBCAA15E9210100667B60 /* CoreDataManager+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CoreDataManager+Helper.m"; sourceTree = "<group>"; };
 		64ABBCAB15E9212B00667B60 /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
@@ -74,6 +66,15 @@
 		64ABBCDE15E942B000667B60 /* ModelHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelHeaders.h; sourceTree = "<group>"; };
 		64ABBCDF15E942E300667B60 /* GCAppConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCAppConstants.h; sourceTree = "<group>"; };
 		64ABBCE015E9487600667B60 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		64ABBD0315E97EED00667B60 /* Construct_Add_InProgress_Goal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = Construct_Add_InProgress_Goal.xcdatamodel; sourceTree = "<group>"; };
+		64ABBD1315E9809600667B60 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Category.h; path = ../Category.h; sourceTree = "<group>"; };
+		64ABBD1415E9809600667B60 /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Category.m; path = ../Category.m; sourceTree = "<group>"; };
+		64ABBD1915E9809600667B60 /* ActivityTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityTag.h; path = ../ActivityTag.h; sourceTree = "<group>"; };
+		64ABBD1A15E9809600667B60 /* ActivityTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTag.m; path = ../ActivityTag.m; sourceTree = "<group>"; };
+		64ABBD1C15E9826C00667B60 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = ../Activity.h; sourceTree = "<group>"; };
+		64ABBD1D15E9826C00667B60 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = ../Activity.m; sourceTree = "<group>"; };
+		64ABBD1F15E98B1E00667B60 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
+		64ABBD2015E98B1E00667B60 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
 		D2A0505E15E93252001F9936 /* GoalListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalListViewController.h; sourceTree = "<group>"; };
 		D2A0505F15E93252001F9936 /* GoalListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalListViewController.m; sourceTree = "<group>"; };
 		D2A0506115E93CDC001F9936 /* GoalEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalEditViewController.h; sourceTree = "<group>"; };
@@ -137,20 +138,20 @@
 		64ABBC8315E91A5D00667B60 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				64ABBD1C15E9826C00667B60 /* Activity.h */,
+				64ABBD1D15E9826C00667B60 /* Activity.m */,
+				64ABBD1915E9809600667B60 /* ActivityTag.h */,
+				64ABBD1A15E9809600667B60 /* ActivityTag.m */,
+				64ABBD1315E9809600667B60 /* Category.h */,
+				64ABBD1415E9809600667B60 /* Category.m */,
+				64ABBD1F15E98B1E00667B60 /* Goal.h */,
+				64ABBD2015E98B1E00667B60 /* Goal.m */,
 				64ABBCC015E93F3400667B60 /* Helpers */,
 				64ABBCAB15E9212B00667B60 /* CoreDataManager.h */,
 				64ABBCAC15E9212B00667B60 /* CoreDataManager.m */,
 				64ABBCA915E9210100667B60 /* CoreDataManager+Helper.h */,
 				64ABBCAA15E9210100667B60 /* CoreDataManager+Helper.m */,
 				64ABBC8415E91A7200667B60 /* Construct.xcdatamodeld */,
-				64ABBC8F15E91F9800667B60 /* Activity.h */,
-				64ABBC9015E91F9800667B60 /* Activity.m */,
-				64ABBC8915E91F8C00667B60 /* ActivityTag.h */,
-				64ABBC8A15E91F8C00667B60 /* ActivityTag.m */,
-				64ABBC9215E91F9800667B60 /* Category.h */,
-				64ABBC9315E91F9800667B60 /* Category.m */,
-				64ABBC8C15E91F9800667B60 /* Goal.h */,
-				64ABBC8D15E91F9800667B60 /* Goal.m */,
 				64ABBCDE15E942B000667B60 /* ModelHeaders.h */,
 			);
 			name = CoreData;
@@ -338,10 +339,6 @@
 				EF25E70B15E91E6200BDB7C0 /* GoalView.m in Sources */,
 				EF25E71815E9321200BDB7C0 /* Road.m in Sources */,
 				64ABBC8615E91A7200667B60 /* Construct.xcdatamodeld in Sources */,
-				64ABBC8B15E91F8C00667B60 /* ActivityTag.m in Sources */,
-				64ABBC8E15E91F9800667B60 /* Goal.m in Sources */,
-				64ABBC9115E91F9800667B60 /* Activity.m in Sources */,
-				64ABBC9415E91F9800667B60 /* Category.m in Sources */,
 				64ABBCAD15E9213F00667B60 /* CoreDataManager.m in Sources */,
 				64ABBCAE15E9214200667B60 /* CoreDataManager+Helper.m in Sources */,
 				D2A0506015E93252001F9936 /* GoalListViewController.m in Sources */,
@@ -351,6 +348,10 @@
 				64ABBCC315E93F6000667B60 /* Activity+Helper.m in Sources */,
 				64ABBCDA15E940D100667B60 /* Goal+Helper.m in Sources */,
 				64ABBCDD15E940E400667B60 /* Category+Helper.m in Sources */,
+				64ABBD1515E9809600667B60 /* Category.m in Sources */,
+				64ABBD1B15E9809600667B60 /* ActivityTag.m in Sources */,
+				64ABBD1E15E9826C00667B60 /* Activity.m in Sources */,
+				64ABBD2115E98B1E00667B60 /* Goal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,9 +477,10 @@
 		64ABBC8415E91A7200667B60 /* Construct.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				64ABBD0315E97EED00667B60 /* Construct_Add_InProgress_Goal.xcdatamodel */,
 				64ABBC8515E91A7200667B60 /* Construct.xcdatamodel */,
 			);
-			currentVersion = 64ABBC8515E91A7200667B60 /* Construct.xcdatamodel */;
+			currentVersion = 64ABBD0315E97EED00667B60 /* Construct_Add_InProgress_Goal.xcdatamodel */;
 			path = Construct.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -20,5 +20,6 @@
 @optional
 
 - (void)finishedAddingGoal:(Goal *)goal sender:(id)sender;
+- (void)cancelledAddingGoal:(id)sender;
 
 @end

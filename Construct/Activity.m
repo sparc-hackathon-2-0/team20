@@ -7,17 +7,21 @@
 //
 
 #import "Activity.h"
+#import "ActivityTag.h"
+#import "Category.h"
 #import "Goal.h"
 
 
 @implementation Activity
 
-@dynamic activityName;
 @dynamic activityDescription;
-@dynamic dueDate;
+@dynamic activityName;
 @dynamic creationDate;
+@dynamic dueDate;
 @dynamic pointValue;
-@dynamic goals;
+@dynamic inProgress;
 @dynamic category;
+@dynamic goals;
+@dynamic tags;
 
 @end

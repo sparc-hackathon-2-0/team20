@@ -13,11 +13,11 @@
 
 @interface Category : NSManagedObject
 
-@property (nonatomic, retain) NSString * categoryName;
 @property (nonatomic, retain) NSDate * categoryDescription;
+@property (nonatomic, retain) NSString * categoryName;
 @property (nonatomic, retain) NSDate * creationDate;
-@property (nonatomic, retain) NSNumber * minPointValue;
 @property (nonatomic, retain) NSNumber * maxPointValue;
+@property (nonatomic, retain) NSNumber * minPointValue;
 @property (nonatomic, retain) Activity *activities;
 
 @end

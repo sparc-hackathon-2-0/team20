@@ -9,17 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Goal;
+@class ActivityTag, Category, Goal;
 
 @interface Activity : NSManagedObject
 
-@property (nonatomic, retain) NSString * activityName;
 @property (nonatomic, retain) NSString * activityDescription;
-@property (nonatomic, retain) NSDate * dueDate;
+@property (nonatomic, retain) NSString * activityName;
 @property (nonatomic, retain) NSDate * creationDate;
+@property (nonatomic, retain) NSDate * dueDate;
 @property (nonatomic, retain) NSNumber * pointValue;
+@property (nonatomic, retain) NSNumber * inProgress;
+@property (nonatomic, retain) Category *category;
 @property (nonatomic, retain) NSSet *goals;
-@property (nonatomic, retain) NSManagedObject *category;
+@property (nonatomic, retain) NSSet *tags;
 @end
 
 @interface Activity (CoreDataGeneratedAccessors)
@@ -28,5 +30,10 @@
 - (void)removeGoalsObject:(Goal *)value;
 - (void)addGoals:(NSSet *)values;
 - (void)removeGoals:(NSSet *)values;
+
+- (void)addTagsObject:(ActivityTag *)value;
+- (void)removeTagsObject:(ActivityTag *)value;
+- (void)addTags:(NSSet *)values;
+- (void)removeTags:(NSSet *)values;
 
 @end

@@ -83,9 +83,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="YOb-Ii-BRM" kind="push" identifier="editGoalCell" id="uBr-Ot-DMB"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -94,6 +91,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Select a Goal" id="y45-UG-dtu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="tyL-mt-hnG">
+                            <connections>
+                                <action selector="cancelAddGoal:" destination="HPa-GK-47i" id="eVp-zF-ub2"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oqU-wW-WPl">
                             <connections>
                                 <segue destination="YOb-Ii-BRM" kind="push" identifier="addGoalCell" id="8Wu-Fs-J4u"/>
@@ -221,6 +223,9 @@
         </class>
         <class className="GoalListViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GoalListViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelAddGoal:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -228,7 +233,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="8Wu-Fs-J4u"/>
-    </inferredMetricsTieBreakers>
 </document>

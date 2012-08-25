@@ -12,11 +12,11 @@
 
 @implementation Category
 
-@dynamic categoryName;
 @dynamic categoryDescription;
+@dynamic categoryName;
 @dynamic creationDate;
-@dynamic minPointValue;
 @dynamic maxPointValue;
+@dynamic minPointValue;
 @dynamic activities;
 
 @end
