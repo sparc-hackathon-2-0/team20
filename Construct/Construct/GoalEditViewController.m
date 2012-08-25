@@ -65,8 +65,10 @@
         goal = [NSEntityDescription insertNewObjectForEntityForName:@"Goal"
                                              inManagedObjectContext:[coreDataManager managedObjectContext]];
     }
-    goal.goalDescription = self.nameTextField.text;
+
     goal.goalName = self.nameTextField.text;
+    goal.goalDescription = self.descriptionTextView.text;
+    
     NSError *error;
     [[goal managedObjectContext] save:&error];
     [[self navigationController] dismissModalViewControllerAnimated:YES];
