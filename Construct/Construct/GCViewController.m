@@ -45,17 +45,17 @@
     
 //    GoalView *firstGoal = [self addGoal:nil AtPoint:CGPointMake(512.0, 128.0)];
 //    [firstGoal setConnections:[NSMutableArray arrayWithObjects:[self addGoal:nil AtPoint:CGPointMake(256.0, 384.0)], [self addGoal:nil AtPoint:CGPointMake(768.0, 512.0)], nil]];
-    GoalView *goalA = [self addGoal:nil AtPoint:CGPointMake(256.0, 384.0)];
-    GoalView *goalB = [self addGoal:nil AtPoint:CGPointMake(768.0, 512.0)];
-    GoalView *goalC = [self addGoal:nil AtPoint:CGPointMake(512.0, 128.0)];
-    GoalView *goalD = [self addGoal:nil AtPoint:CGPointMake(128.0, 704.0)];
-    
-    
-    [goalA setConnections:[NSMutableArray arrayWithObjects:goalB, goalC, nil]];
-    
-    [goalB setConnections:[NSMutableArray arrayWithObjects:goalC, goalD, nil]];
-    
-    [goalD setConnections:[NSMutableArray arrayWithObject:goalC]];
+//    GoalView *goalA = [self addGoal:nil AtPoint:CGPointMake(256.0, 384.0)];
+//    GoalView *goalB = [self addGoal:nil AtPoint:CGPointMake(768.0, 512.0)];
+//    GoalView *goalC = [self addGoal:nil AtPoint:CGPointMake(512.0, 128.0)];
+//    GoalView *goalD = [self addGoal:nil AtPoint:CGPointMake(128.0, 704.0)];
+//    
+//    
+//    [goalA setConnections:[NSMutableArray arrayWithObjects:goalB, goalC, nil]];
+//    
+//    [goalB setConnections:[NSMutableArray arrayWithObjects:goalC, goalD, nil]];
+//    
+//    [goalD setConnections:[NSMutableArray arrayWithObject:goalC]];
 }
 
 - (void)viewDidUnload
@@ -107,7 +107,7 @@
 //    [self addGoal:nil AtPoint:CGPointMake(512.0, 384.0)];
 }
 
-- (GoalView *)addGoal:(id)goal AtPoint:(CGPoint)point
+- (GoalView *)addGoal:(Goal *)goal AtPoint:(CGPoint)point
 {
     if (!goals) {
         goals = [NSMutableArray array];
@@ -185,8 +185,6 @@
     [aRoad setSize:1.0];
     
     [aRoad update];
-//    [aRoad setNeedsDisplay];
-    
 }
 
 - (void)updateConnections

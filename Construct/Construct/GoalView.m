@@ -36,7 +36,7 @@
 
 - (void)setLevel:(NSNumber *)level
 {
-    [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 30.0 * level.intValue, 50.0 * level.intValue)];
+    [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 15.0 * [_goal pointValue], 25.0 * [_goal pointValue])];
 }
 
 /*
