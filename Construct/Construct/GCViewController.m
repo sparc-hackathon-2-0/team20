@@ -28,15 +28,18 @@
 	// Do any additional setup after loading the view, typically from a nib.
         
     map = [[UIScrollView alloc] initWithFrame:self.view.frame];
-    [map setAutoresizingMask:self.view.autoresizingMask];
-    [map setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTile.png"]]];
-    [map setContentSize:CGSizeMake(2048.0, 1536.0)];
-    [map setMinimumZoomScale:0.1];
+    [map setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+    [map setBackgroundColor:[UIColor lightGrayColor]];
+    [map setContentSize:CGSizeMake(self.view.bounds.size.width*4.0, self.view.bounds.size.height*4.0)];
+    [map setMinimumZoomScale:0.25];
     [map setMaximumZoomScale:1.0];
+    [map setContentOffset:CGPointMake(self.view.bounds.size.width*1.5, self.view.bounds.size.height*1.5)];
     [map setDelegate:self];
     
-    mapContent = [[UIView alloc] initWithFrame:map.bounds];
-    [mapContent setBackgroundColor:[UIColor lightGrayColor]];
+    mapContent = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width*4.0, self.view.bounds.size.height*4.0)];
+    [mapContent setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
+    [mapContent setAutoresizesSubviews:YES];
+    [mapContent setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundTile.png"]]];
     [map addSubview:mapContent];
     
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
@@ -51,10 +54,10 @@
 //    [firstGoal setConnections:[NSMutableArray arrayWithObjects:[self addGoal:nil AtPoint:CGPointMake(256.0, 384.0)], [self addGoal:nil AtPoint:CGPointMake(768.0, 512.0)], nil]];
     Goal *goal = [[Goal alloc] init];
 
-    GoalView *goalA = [self addGoal:goal AtPoint:CGPointMake(256.0, 384.0)];
-    GoalView *goalB = [self addGoal:goal AtPoint:CGPointMake(768.0, 512.0)];
-    GoalView *goalC = [self addGoal:goal AtPoint:CGPointMake(512.0, 128.0)];
-    GoalView *goalD = [self addGoal:goal AtPoint:CGPointMake(128.0, 704.0)];
+    GoalView *goalA = [self addGoal:goal AtPoint:CGPointMake(mapContent.center.x+200, mapContent.center.y)];
+    GoalView *goalB = [self addGoal:goal AtPoint:CGPointMake(mapContent.center.x+400, mapContent.center.y+300)];
+    GoalView *goalC = [self addGoal:goal AtPoint:CGPointMake(mapContent.center.x-400, mapContent.center.y+300)];
+    GoalView *goalD = [self addGoal:goal AtPoint:CGPointMake(mapContent.center.x-200, mapContent.center.y)];
 //
 //    
     [goalA setConnections:[NSMutableArray arrayWithObjects:goalB, goalC, nil]];
@@ -165,7 +168,7 @@
 #pragma mark - GoalListDelegate methods
 
 - (void)finishedAddingGoal:(Goal *)goal sender:(id)sender{
-    [self addGoal:goal AtPoint:[self.view center]];
+    [self addGoal:goal AtPoint:[mapContent center]];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -267,15 +270,23 @@
     NSLog(@"ScrollView Frame: %@",NSStringFromCGRect(scrollView.frame));
     NSLog(@"ScrollView Center: %@",NSStringFromCGPoint(scrollView.center));
     NSLog(@"ScrollView ContentSize: %@",NSStringFromCGSize(scrollView.contentSize));
+    NSLog(@"ScrollView ZoomScale: %f",scrollView.zoomScale);
     
     NSLog(@"MapContent Bounds: %@",NSStringFromCGRect(mapContent.bounds));
     NSLog(@"MapContent Frame: %@",NSStringFromCGRect(mapContent.frame));
     NSLog(@"MapContent Center: %@",NSStringFromCGPoint(mapContent.center));
+    NSLog(@"MapContent Super: %@",mapContent.superview);
     
+//    [mapContent setBounds:CGRectMake(0.0, 0.0, scrollView.contentSize.width, scrollView.contentSize.height)];
     
-    [mapContent setFrame:CGRectMake(0.0, 0.0, scrollView.contentSize.width, scrollView.contentSize.height)];
+//    CGRect temp = mapContent.bounds;
+//    temp.size.width = 1024.0/scrollView.zoomScale;
+//    temp.size.height = 768.0/scrollView.zoomScale;
+//    [mapContent setBounds:temp];
     
-    [mapContent setCenter:self.view.center];
+//    mapContent setFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+    
+//    [mapContent setCenter:CGPointMake(self.view.bounds.size.width/2.0, self.view.bounds.size.height/2.0)];
 }
 
 @end

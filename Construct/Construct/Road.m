@@ -29,9 +29,7 @@
     [road setStart:start];
     [road setEnd:end];
     [road setSize:size];
-    
-    [road setNeedsDisplay];
-    
+        
     return road;
 }
 
