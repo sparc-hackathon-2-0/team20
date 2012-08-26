@@ -10,9 +10,7 @@
 #import "CoreDataManager+Helper.h"
 #import "CoreDataManager+DefaultData.h"
 
-@interface GCAppDelegate (){
-    BOOL isAppFirstLaunch;
-}
+@interface GCAppDelegate ()
 @end
 
 @implementation GCAppDelegate
@@ -20,9 +18,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    if (!isAppFirstLaunch){
-        [self initializeApp];
-    }
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultsFirstRun];
+    
+    [self initializeApp];
     return YES;
 }
 							
@@ -67,24 +65,25 @@
 - (void)initializeApp{
     
     // Check for the initial run of the app
-    isAppFirstLaunch = (BOOL)[[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultsFirstRun];
-    
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    // Setup persistent data stores
     [self setupDataModels];
+   
+    // Setup persistent data stores
+    
 }
 
 - (void)setupDataModels{
     
     // Create the config file on initial launch
-    if (isAppFirstLaunch){
         
         // Create Data Models
         [CoreDataManager managerWithName:COREDATA_CONSTRUCT
                             withFileName:COREDATA_CONSTRUCT_DBFILE
                            withExtension:COREDATA_DEFAULT_EXTENSION];
         
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kUserDefaultsFirstRun]){
+
         [self createDataFile:COREDATA_CONSTRUCT_DBFILE fromDefault:COREDATA_CONSTRUCT_DEFAULT_DBFILE];
         
         // Setup Sample Data
@@ -102,8 +101,9 @@
         [coreDataManager loadDefaultData];
         
         [coreDataManager saveContext];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kUserDefaultsFirstRun];
     }
-    
     
 }
 
