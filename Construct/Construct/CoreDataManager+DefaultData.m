@@ -43,7 +43,7 @@
     Goal *iOSGuru = (Goal *)[self insertManagedObjectForEntityName:@"Goal"];
     [iOSGuru setGoalName:@"iOS Guru"];
     [iOSGuru setGoalDescription:@"AppStore Icon"];
-    [iOSGuru setInProgress:[NSNumber numberWithBool:NO]];
+    [iOSGuru setInProgress:[NSNumber numberWithBool:YES]];
     [[iOSGuru managedObjectContext] save:&error];
     
     Goal *phpNinja = (Goal *)[self insertManagedObjectForEntityName:@"Goal"];
@@ -55,7 +55,7 @@
     Goal *androidRockstar = (Goal *)[self insertManagedObjectForEntityName:@"Goal"];
     [androidRockstar setGoalName:@"Android Rockstar"];
     [androidRockstar setGoalDescription:@"Rockin' code"];
-    [androidRockstar setInProgress:[NSNumber numberWithBool:NO]];
+    [androidRockstar setInProgress:[NSNumber numberWithBool:YES]];
     [[androidRockstar managedObjectContext] save:&error];
     
     Activity *tutorial = (Activity *)[self insertManagedObjectForEntityName:@"Activity"];
@@ -66,7 +66,6 @@
     [iOSGuru addActivitiesObject:tutorial];
     [androidRockstar addActivitiesObject:tutorial];
     [phpNinja addActivitiesObject:tutorial];
-    
     
     Activity *answerStack = (Activity *)[self insertManagedObjectForEntityName:@"Activity"];
     [answerStack setActivityName:@"Answer Stack Overflow question"];
