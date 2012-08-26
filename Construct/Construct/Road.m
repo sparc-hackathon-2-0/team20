@@ -24,6 +24,8 @@
     [road setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"road.png"]]];
     [road setUserInteractionEnabled:NO];
     
+    [road.layer setShouldRasterize:YES];
+    
     [road.layer setAnchorPoint:CGPointMake(0.0, 0.0)];
     
     [road setStart:start];

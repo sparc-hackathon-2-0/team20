@@ -60,8 +60,15 @@
     //    [firstGoal setConnections:[NSMutableArray arrayWithObjects:[self addGoal:nil AtPoint:CGPointMake(256.0, 384.0)], [self addGoal:nil AtPoint:CGPointMake(768.0, 512.0)], nil]];
     for (Goal *goal in [Goal currentGoals]) {
         GoalView *goalView = [self addGoal:goal AtPoint:CGPointMake(mapContent.center.x+200, mapContent.center.y)];
+        
+        GoalView *otherGoalView = [goalViews objectAtIndex:(arc4random() % goalViews.count)];
+        
+        if (goalView != otherGoalView) {
+            [goalView setConnections:[NSMutableArray arrayWithObject:otherGoalView]];
+        }
+        
     }
-    
+        
 //    GoalView *goalView = [self addGoal:[[Goal alloc] init] AtPoint:CGPointMake(mapContent.center.x+200, mapContent.center.y)];
 
 
