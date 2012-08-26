@@ -18,8 +18,8 @@
 @dynamic activityName;
 @dynamic creationDate;
 @dynamic dueDate;
-@dynamic pointValue;
 @dynamic inProgress;
+@dynamic pointValue;
 @dynamic category;
 @dynamic goals;
 @dynamic tags;

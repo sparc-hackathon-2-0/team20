@@ -8,6 +8,7 @@
 
 #import "GCAppDelegate.h"
 #import "CoreDataManager+Helper.h"
+#import "CoreDataManager+DefaultData.h"
 
 @interface GCAppDelegate (){
     BOOL isAppFirstLaunch;
@@ -19,7 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [self initializeApp];
+    if (!isAppFirstLaunch){
+        [self initializeApp];
+    }
     return YES;
 }
 							
@@ -86,10 +89,18 @@
         
         // Setup Sample Data
         CoreDataManager *coreDataManager = [CoreDataManager namedManagerWithName:COREDATA_CONSTRUCT];
-        Goal *firstGoal = [NSEntityDescription insertNewObjectForEntityForName:@"Goal"
-                                      inManagedObjectContext:[coreDataManager managedObjectContext]];
+        /*
+        Activity *soQuestion = (Activity *)[NSEntityDescription
+                                            insertNewObjectForEntityForName:@"Activity"
+                                            inManagedObjectContext:[coreDataManager managedObjectContext]];
         
-        [firstGoal setGoalName:@"My first goal"];
+        [soQuestion setActivityName:@"Ask StackOverflow question"];
+        [soQuestion setPointValue:[NSNumber numberWithInt:5]];
+        NSError *error = nil;
+        [[soQuestion managedObjectContext] save:&error];
+         */
+        [coreDataManager loadDefaultData];
+        
         [coreDataManager saveContext];
     }
     
