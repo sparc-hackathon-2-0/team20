@@ -111,10 +111,6 @@
     [androidRockstar addActivitiesObject:manMonth];
     
     
-
-    
-    
-    
 }
 
 - (void)createDefaultCategories{
