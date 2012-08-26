@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-        
+    
     map = [[UIScrollView alloc] initWithFrame:self.view.frame];
     [map setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     [map setBackgroundColor:[UIColor lightGrayColor]];
@@ -35,6 +35,12 @@
     [map setMaximumZoomScale:1.0];
     [map setContentOffset:CGPointMake(self.view.bounds.size.width*1.5, self.view.bounds.size.height*1.5)];
     [map setDelegate:self];
+    
+    NSLog(@"View.Bounds.Width: %f",self.view.bounds.size.width);
+    NSLog(@"View.Bounds.Height: %f",self.view.bounds.size.height);
+    
+    NSLog(@"View.Frame.Width: %f",self.view.frame.size.width);
+    NSLog(@"View.Frame.Height: %f",self.view.frame.size.height);
     
     mapContent = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width*4.0, self.view.bounds.size.height*4.0)];
     [mapContent setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
@@ -50,23 +56,15 @@
     [self.view addSubview:map];
     [self.view addSubview:addButton];
     
-//    GoalView *firstGoal = [self addGoal:nil AtPoint:CGPointMake(512.0, 128.0)];
-//    [firstGoal setConnections:[NSMutableArray arrayWithObjects:[self addGoal:nil AtPoint:CGPointMake(256.0, 384.0)], [self addGoal:nil AtPoint:CGPointMake(768.0, 512.0)], nil]];
-    Goal *goal = [[Goal alloc] init];
+    //    GoalView *firstGoal = [self addGoal:nil AtPoint:CGPointMake(512.0, 128.0)];
+    //    [firstGoal setConnections:[NSMutableArray arrayWithObjects:[self addGoal:nil AtPoint:CGPointMake(256.0, 384.0)], [self addGoal:nil AtPoint:CGPointMake(768.0, 512.0)], nil]];
+    for (Goal *goal in [Goal currentGoals]) {
+        GoalView *goalView = [self addGoal:goal AtPoint:CGPointMake(mapContent.center.x+200, mapContent.center.y)];
+    }
+    
+//    GoalView *goalView = [self addGoal:[[Goal alloc] init] AtPoint:CGPointMake(mapContent.center.x+200, mapContent.center.y)];
 
-    GoalView *goalA = [self addGoal:goal AtPoint:CGPointMake(mapContent.center.x+200, mapContent.center.y)];
-    GoalView *goalB = [self addGoal:goal AtPoint:CGPointMake(mapContent.center.x+400, mapContent.center.y+300)];
-    GoalView *goalC = [self addGoal:goal AtPoint:CGPointMake(mapContent.center.x-400, mapContent.center.y+300)];
-    GoalView *goalD = [self addGoal:goal AtPoint:CGPointMake(mapContent.center.x-200, mapContent.center.y)];
-//
-//    
-    [goalA setConnections:[NSMutableArray arrayWithObjects:goalB, goalC, nil]];
-    
-    [goalB setConnections:[NSMutableArray arrayWithObjects:goalC, goalD, nil]];
-    
-    [goalD setConnections:[NSMutableArray arrayWithObject:goalC]];
-    
-    [self updateConnections];
+
 }
 
 - (void)viewDidUnload
@@ -75,6 +73,41 @@
     [self setPopover:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    NSLog(@"View.Bounds.Width: %f",self.view.bounds.size.width);
+    NSLog(@"View.Bounds.Height: %f",self.view.bounds.size.height);
+    
+    NSLog(@"View.Frame.Width: %f",self.view.frame.size.width);
+    NSLog(@"View.Frame.Height: %f",self.view.frame.size.height);
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    NSLog(@"View.Bounds.Width: %f",self.view.bounds.size.width);
+    NSLog(@"View.Bounds.Height: %f",self.view.bounds.size.height);
+    
+    NSLog(@"View.Frame.Width: %f",self.view.frame.size.width);
+    NSLog(@"View.Frame.Height: %f",self.view.frame.size.height);
+    
+//    [map setContentSize:CGSizeMake(self.view.bounds.size.width*4.0, self.view.bounds.size.height*4.0)];
+//    [map setContentOffset:CGPointMake(self.view.bounds.size.width*1.5, self.view.bounds.size.height*1.5)];
+//    
+//    [mapContent setFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width*4.0, self.view.bounds.size.height*4.0)];
+    
+    NSLog(@"ScrollView Bounds: %@",NSStringFromCGRect(map.bounds));
+    NSLog(@"ScrollView Frame: %@",NSStringFromCGRect(map.frame));
+    NSLog(@"ScrollView Center: %@",NSStringFromCGPoint(map.center));
+    NSLog(@"ScrollView ContentSize: %@",NSStringFromCGSize(map.contentSize));
+    NSLog(@"ScrollView ZoomScale: %f",map.zoomScale);
+    
+    NSLog(@"MapContent Bounds: %@",NSStringFromCGRect(mapContent.bounds));
+    NSLog(@"MapContent Frame: %@",NSStringFromCGRect(mapContent.frame));
+    NSLog(@"MapContent Center: %@",NSStringFromCGPoint(mapContent.center));
+    NSLog(@"MapContent Super: %@",mapContent.superview);
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -266,16 +299,7 @@
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
     // The scroll view has zoomed, so you need to re-center the contents
-    NSLog(@"ScrollView Bounds: %@",NSStringFromCGRect(scrollView.bounds));
-    NSLog(@"ScrollView Frame: %@",NSStringFromCGRect(scrollView.frame));
-    NSLog(@"ScrollView Center: %@",NSStringFromCGPoint(scrollView.center));
-    NSLog(@"ScrollView ContentSize: %@",NSStringFromCGSize(scrollView.contentSize));
-    NSLog(@"ScrollView ZoomScale: %f",scrollView.zoomScale);
-    
-    NSLog(@"MapContent Bounds: %@",NSStringFromCGRect(mapContent.bounds));
-    NSLog(@"MapContent Frame: %@",NSStringFromCGRect(mapContent.frame));
-    NSLog(@"MapContent Center: %@",NSStringFromCGPoint(mapContent.center));
-    NSLog(@"MapContent Super: %@",mapContent.superview);
+
     
 //    [mapContent setBounds:CGRectMake(0.0, 0.0, scrollView.contentSize.width, scrollView.contentSize.height)];
     
