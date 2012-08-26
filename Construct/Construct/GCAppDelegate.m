@@ -18,7 +18,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultsFirstRun];
+    if (![[[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys] containsObject:kUserDefaultsFirstRun]){
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultsFirstRun];
+    }
     
     [self initializeApp];
     return YES;
