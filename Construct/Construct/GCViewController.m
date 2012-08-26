@@ -153,6 +153,11 @@
     UIViewController *goalInfoViewController = [[UIViewController alloc] init];
     [goalInfoViewController setContentSizeForViewInPopover:CGSizeMake(320.0, 480.0)];
     
+    if (goalViewInfoPopoverController.isPopoverVisible) {
+        [goalViewInfoPopoverController dismissPopoverAnimated:YES];
+        goalViewInfoPopoverController = nil;
+    }
+    
     goalViewInfoPopoverController = [[UIPopoverController alloc] initWithContentViewController:goalInfoViewController];
     [goalViewInfoPopoverController presentPopoverFromRect:goalView.frame inView:mapContent permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
