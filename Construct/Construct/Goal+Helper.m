@@ -17,9 +17,12 @@
     NSInteger totalPointValue = 0;
     
     for (Activity *activity in goalActivities){
+       
         totalPointValue = totalPointValue + [[activity pointValue] integerValue];
     }
     
+    
+    NSLog(@"%@ - Total value: %d", [self goalName],totalPointValue);
     return totalPointValue;
     
 }
