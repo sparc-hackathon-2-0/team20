@@ -19,7 +19,9 @@
     
     [goalView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:imageName]]];
     [goalView setGoal:goal];
-    [goalView setFrame:CGRectMake(goalView.frame.origin.x, goalView.frame.origin.y, 15.0 * [goalView.goal totalValue], 25.0 * [goalView.goal totalValue])];
+    [goalView setFrame:CGRectMake(goalView.frame.origin.x, goalView.frame.origin.y, 15.0 * [goalView.goal totalValue]/10, 25.0 * [goalView.goal totalValue]/10)];
+    
+    NSLog(@"%i",[(Goal*)goal totalValue]);
     
     return goalView;
 }
@@ -37,7 +39,9 @@
 
 - (void)setLevel:(NSNumber *)level
 {
-    [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 15.0 * [_goal totalValue], 25.0 * [_goal totalValue])];
+    NSLog(@"%i",[_goal totalValue]);
+    
+    [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 15.0 * [_goal totalValue]/10, 25.0 * [_goal totalValue]/10)];
 }
 
 /*
