@@ -10,19 +10,17 @@
 
 @implementation Goal (Helper)
 
-- (NSInteger)pointValue{
+- (NSInteger)totalValue{
     
-    CoreDataManager *coreDataManager = [CoreDataManager namedManagerWithName:COREDATA_CONSTRUCT];
+    NSArray *goalActivities = [[self activities] allObjects];
     
-    NSArray *activities = [[self activities] allObjects];
+    NSInteger totalPointValue = 0;
     
-    NSInteger totalValue;
-    
-    for (Activity *activity in activities){
-        totalValue = totalValue + [[activity pointValue] intValue];
+    for (Activity *activity in goalActivities){
+        totalPointValue = totalPointValue + [[activity pointValue] integerValue];
     }
     
-    return totalValue;
+    return totalPointValue;
     
 }
 

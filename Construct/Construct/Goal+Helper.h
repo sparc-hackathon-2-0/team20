@@ -11,7 +11,7 @@
 @interface Goal (Helper)
 
 
-- (NSInteger)pointValue; // aggregate point value for all activities in this goal
+- (NSInteger)totalValue; // aggregate point value for all activities in this goal
 - (NSInteger)numActivities;
 
 + (NSArray *)availableGoals;

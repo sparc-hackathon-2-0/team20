@@ -83,7 +83,7 @@
     
     if (goal){
         [[cell textLabel] setText:[goal goalName]];
-        [[cell detailTextLabel] setText:[NSString stringWithFormat:@"Points: %d, Activities: %d",[goal pointValue],[goal numActivities]]];
+        [[cell detailTextLabel] setText:[NSString stringWithFormat:@"Points: %d, Activities: %d",[goal totalValue],[goal numActivities]]];
     }
     
     return cell;
