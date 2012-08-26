@@ -81,9 +81,11 @@
 
     Goal *goal = [goals objectAtIndex:indexPath.row];
     
-    // Configure the cell...
-    [[cell textLabel] setText:[goal goalName]];
-    [[cell detailTextLabel] setText:[goal goalDescription]];
+    if (goal){
+        [[cell textLabel] setText:[goal goalName]];
+        [[cell detailTextLabel] setText:[NSString stringWithFormat:@"Points: %d, Activities: %d",[goal pointValue],[goal numActivities]]];
+    }
+    
     return cell;
 }
 

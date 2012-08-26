@@ -14,8 +14,20 @@
     
     CoreDataManager *coreDataManager = [CoreDataManager namedManagerWithName:COREDATA_CONSTRUCT];
     
-    return 3;
+    NSArray *activities = [[self activities] allObjects];
     
+    NSInteger totalValue;
+    
+    for (Activity *activity in activities){
+        totalValue = totalValue + [[activity pointValue] intValue];
+    }
+    
+    return totalValue;
+    
+}
+
+- (NSInteger)numActivities{
+    return [[[self activities] allObjects] count];
 }
 
 + (NSArray *)availableGoals{

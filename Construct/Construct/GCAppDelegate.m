@@ -78,7 +78,7 @@
 - (void)setupDataModels{
     
     // Create the config file on initial launch
-    if (!isAppFirstLaunch){
+    if (isAppFirstLaunch){
         
         // Create Data Models
         [CoreDataManager managerWithName:COREDATA_CONSTRUCT

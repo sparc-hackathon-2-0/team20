@@ -12,6 +12,7 @@
 
 
 - (NSInteger)pointValue; // aggregate point value for all activities in this goal
+- (NSInteger)numActivities;
 
 + (NSArray *)availableGoals;
 + (NSArray *)currentGoals;
