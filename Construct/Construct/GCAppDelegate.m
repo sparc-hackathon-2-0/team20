@@ -105,6 +105,7 @@
         [coreDataManager saveContext];
         
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:kUserDefaultsFirstRun];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
 }
