@@ -17,8 +17,8 @@
 @property (nonatomic, retain) NSString * activityName;
 @property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSDate * dueDate;
-@property (nonatomic, retain) NSNumber * pointValue;
 @property (nonatomic, retain) NSNumber * inProgress;
+@property (nonatomic, retain) NSNumber * pointValue;
 @property (nonatomic, retain) Category *category;
 @property (nonatomic, retain) NSSet *goals;
 @property (nonatomic, retain) NSSet *tags;
